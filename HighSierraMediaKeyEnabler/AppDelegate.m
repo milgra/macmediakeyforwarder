@@ -35,25 +35,28 @@
     -(void)mediaKeyTap:(SPMediaKeyTap*)keyTap receivedMediaKeyEvent:(NSEvent*)event;
     {
         iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+        SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
         NSAssert([event type] == NSSystemDefined && [event subtype] == SPSystemDefinedEventMediaKeys, @"Unexpected NSEvent in mediaKeyTap:receivedMediaKeyEvent:");
         // here be dragons...
         int keyCode = (([event data1] & 0xFFFF0000) >> 16);
         int keyFlags = ([event data1] & 0x0000FFFF);
         BOOL keyIsPressed = (((keyFlags & 0xFF00) >> 8)) == 0xA;
-        int keyRepeat = (keyFlags & 0x1);
         
         if (keyIsPressed) {
             switch (keyCode) {
                 case NX_KEYTYPE_PLAY:
-                    [iTunes playpause];
+                    if ( [iTunes isRunning ] ) [iTunes playpause];
+                    if ( [spotify isRunning ] ) [spotify playpause];
                     break;
                     
                 case NX_KEYTYPE_FAST:
-                    [iTunes nextTrack];
+                    if ( [iTunes isRunning ] ) [iTunes nextTrack];
+                    if ( [spotify isRunning ] ) [spotify nextTrack];
                     break;
                     
                 case NX_KEYTYPE_REWIND:
-                    [iTunes previousTrack];
+                    if ( [iTunes isRunning ] ) [iTunes previousTrack];
+                    if ( [spotify isRunning ] ) [spotify previousTrack];
                     break;
                 default:
                     break;

@@ -4,6 +4,7 @@
 
 #import <AppKit/AppKit.h>
 #import <ScriptingBridge/ScriptingBridge.h>
+#import "PlayerApplication.h"
 
 
 @class iTunesApplication, iTunesItem, iTunesAirPlayDevice, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesSubscriptionPlaylist, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesMiniplayerWindow, iTunesPlaylistWindow, iTunesVideoWindow;
@@ -165,7 +166,7 @@ typedef enum iTunesEClS iTunesEClS;
  */
 
 // The application program
-@interface iTunesApplication : SBApplication
+@interface iTunesApplication : SBApplication <PlayerApplication>
 
 - (SBElementArray<iTunesAirPlayDevice *> *) AirPlayDevices;
 - (SBElementArray<iTunesBrowserWindow *> *) browserWindows;

@@ -9,4 +9,4 @@ script:
 - xcodebuild -project HighSierraMediaKeyEnabler.xcodeproj -scheme "HighSierraMediaKeyEnabler" build 
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)  -J 'highsierramediakeyenabler'
+- bash <(curl -s https://codecov.io/bash)  -J 'HighSierraMediaKeyEnabler'

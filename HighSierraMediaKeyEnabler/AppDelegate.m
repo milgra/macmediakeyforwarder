@@ -57,7 +57,8 @@
         menu.itemArray[Spotify].enabled = (spotifyApplication != nil);
 
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
-        [ menu addItemWithTitle : @"Quit" action : @selector(terminate:) keyEquivalent : @"" ];
+        NSString *appName = [NSBundle mainBundle].infoDictionary[@"CFBundleName"];
+        [ menu addItemWithTitle : [NSString stringWithFormat: @"Quit %@", appName] action : @selector(terminate:) keyEquivalent : @"" ];
 
         NSImage* image = [ NSImage imageNamed : @"mak" ];
         [ image setTemplate : YES ];

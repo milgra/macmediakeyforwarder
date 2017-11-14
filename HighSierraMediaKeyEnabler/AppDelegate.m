@@ -45,19 +45,16 @@
         standardApplication = _iTunesApplication;
         
         NSMenu *menu = [ [ NSMenu alloc ] init ];
+        menu.autoenablesItems = NO;
+        
         [menu insertItemWithTitle : @"iTunes" action : @selector(switchStandardApplication:) keyEquivalent:@"" atIndex: iTunes];
         menu.itemArray[iTunes].tag = iTunes;
         menu.itemArray[iTunes].state = NSOnState;
         
-        if (spotifyApplication) {
-            [menu insertItemWithTitle : @"Spotify" action : @selector(switchStandardApplication:) keyEquivalent:@"" atIndex: Spotify];
-            menu.itemArray[Spotify].tag = Spotify;
-            menu.itemArray[Spotify].state = NSOffState;
-        } /*else {
-            // for a consistent GUI we may need this line
-            [menu addItemWithTitle:@"Spotify not installed" action:nil keyEquivalent:@""];
-        }*/
-
+        [menu insertItemWithTitle : @"Spotify" action : @selector(switchStandardApplication:) keyEquivalent:@"" atIndex: Spotify];
+        menu.itemArray[Spotify].tag = Spotify;
+        menu.itemArray[Spotify].state = NSOffState;
+        menu.itemArray[Spotify].enabled = (spotifyApplication != nil);
 
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
         [ menu addItemWithTitle : @"Quit" action : @selector(terminate:) keyEquivalent : @"" ];
@@ -80,8 +77,6 @@
 
     -(void)mediaKeyTap:(SPMediaKeyTap*)keyTap receivedMediaKeyEvent:(NSEvent*)event;
     {
-        //iTunesApplication* iTunesApplication = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-        //SpotifyApplication *spotifyApplication = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
         NSAssert([event type] == NSSystemDefined && [event subtype] == SPSystemDefinedEventMediaKeys, @"Unexpected NSEvent in mediaKeyTap:receivedMediaKeyEvent:");
         // here be dragons...
         int keyCode = (([event data1] & 0xFFFF0000) >> 16);
@@ -92,22 +87,16 @@
             switch (keyCode) {
                 case NX_KEYTYPE_PLAY:
                     [standardApplication playpause];
-                    //if (defaultPlayer == iTunes) [iTunesApplication playpause];
-                    //if ( [iTunesApplication isRunning ] && defaultPlayer == iTunes) [iTunesApplication playpause];
-                    //if ( [spotifyApplication isRunning ] ) [spotifyApplication playpause];
                     break;
                     
                 case NX_KEYTYPE_FAST:
                     [standardApplication nextTrack];
-                    //if ( [iTunesApplication isRunning ] && defaultPlayer == iTunes) [iTunesApplication nextTrack];
-                    //if ( [spotifyApplication isRunning ] ) [spotifyApplication nextTrack];
                     break;
                     
                 case NX_KEYTYPE_REWIND:
                     [standardApplication previousTrack];
-                    //if ( [iTunesApplication isRunning ] && defaultPlayer == iTunes) [iTunesApplication previousTrack];
-                    //if ( [spotifyApplication isRunning ] ) [spotifyApplication previousTrack];
                     break;
+
                 default:
                     break;
                     // More cases defined in hidsystem/ev_keymap.h

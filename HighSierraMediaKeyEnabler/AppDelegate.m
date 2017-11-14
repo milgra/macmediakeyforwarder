@@ -1,9 +1,11 @@
 
     #import "AppDelegate.h"
 
+    static NSString* const kSelectedApplication = @"selectedApplication";
+
     typedef enum : NSUInteger {
-        iTunes = 0,
-        Spotify = 1
+        iTunes = 1,
+        Spotify = 2
     } PlayerApplicationTag;
 
 
@@ -18,19 +20,24 @@
 
     @implementation AppDelegate
 
-    - (void) switchStandardApplication:(NSMenuItem*) toSwitchItem {
-        if (toSwitchItem.tag == iTunes) {
+    - (void)switchStandardApplication:(NSMenuItem*) menuItem {
+        [self switchStandardApplicationTag:menuItem.tag];
+    }
+
+    - (void) switchStandardApplicationTag:(NSUInteger) tag {
+        [[NSUserDefaults standardUserDefaults] setInteger:tag forKey:kSelectedApplication];
+        
+        if (tag == iTunes) {
             standardApplication = _iTunesApplication;
-            NSLog(@"Use iTunes");
-        } else if (toSwitchItem.tag == Spotify && spotifyApplication) {
+        } else if (tag == Spotify && spotifyApplication) {
             standardApplication = spotifyApplication;
-            NSLog(@"Use Spotify");
         } else {
-            //something went really wrong
+            tag = iTunes;
             standardApplication = _iTunesApplication;
         }
+        
         for (NSMenuItem* item in statusItem.menu.itemArray) {
-            if (item == toSwitchItem) {
+            if (item.tag == tag) {
                 item.state = NSOnState;
             } else {
                 item.state = NSOffState;
@@ -47,14 +54,12 @@
         NSMenu *menu = [ [ NSMenu alloc ] init ];
         menu.autoenablesItems = NO;
         
-        [menu insertItemWithTitle : @"iTunes" action : @selector(switchStandardApplication:) keyEquivalent:@"" atIndex: iTunes];
-        menu.itemArray[iTunes].tag = iTunes;
-        menu.itemArray[iTunes].state = NSOnState;
+        [menu addItemWithTitle : @"iTunes" action : @selector(switchStandardApplication:) keyEquivalent:@""];
+        menu.itemArray.lastObject.tag = iTunes;
         
-        [menu insertItemWithTitle : @"Spotify" action : @selector(switchStandardApplication:) keyEquivalent:@"" atIndex: Spotify];
-        menu.itemArray[Spotify].tag = Spotify;
-        menu.itemArray[Spotify].state = NSOffState;
-        menu.itemArray[Spotify].enabled = (spotifyApplication != nil);
+        [menu addItemWithTitle : @"Spotify" action : @selector(switchStandardApplication:) keyEquivalent:@""];
+        menu.itemArray.lastObject.tag = Spotify;
+        menu.itemArray.lastObject.enabled = (spotifyApplication != nil);
 
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
         NSString *appName = [NSBundle mainBundle].infoDictionary[@"CFBundleName"];
@@ -67,6 +72,10 @@
         [ statusItem setToolTip : @"High Sierra Media Key Enabler" ];
         [ statusItem setMenu : menu ];
         [ statusItem setImage : image ];
+
+        // This will default to 0, and switchStandardApplication will default to using iTunes
+        NSInteger selectedApplicationTag = [[NSUserDefaults standardUserDefaults] integerForKey:kSelectedApplication];
+        [self switchStandardApplicationTag:selectedApplicationTag];
         
         keyTap = [[SPMediaKeyTap alloc] initWithDelegate:self];
         if([SPMediaKeyTap usesGlobalMediaKeyTap])

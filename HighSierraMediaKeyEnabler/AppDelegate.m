@@ -115,9 +115,4 @@
         }
     }
 
-- ( void ) terminate
-    {
-        [ NSApp terminate : nil ];
-    }
-
     @end

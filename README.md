@@ -1,8 +1,9 @@
-# highsierramediakeyenabler
-MacOS High Sierra Media Key Enabler for iTunes
+[![Build Status](https://travis-ci.org/milgra/HighSierraMediaKeyEnabler.svg)](https://travis-ci.org/milgra/HighSierraMediaKeyEnabler)
 
-It only works with physical buttons, won't work with touchbar.
+# HighSierraMediaKeyEnabler
 
-Download the compiled application here : http://milgra.com/downloads/HighSierraMediaKeyEnabler.zip
+> macOS High Sierra Media Key Enabler for iTunes/Spotify
 
-I don't have a developer certificate so trust the app when MacOS asks. Compile the project yourself if you don't trust me :)
+It only works with physical buttons, won't work with the TouchBar. This small app detects if Spotify is installed and offers to switch between controlling iTunes and Spotify.
+
+I don't have a developer certificate so trust the app when macOS asks. Feel free to compile the project yourself.

@@ -1,0 +1,12 @@
+branches:
+  only:
+  - master
+
+language: objective-c
+osx_image: xcode9.1
+
+script:
+- xcodebuild -project HighSierraMediaKeyEnabler.xcodeproj -scheme "HighSierraMediaKeyEnabler" build 
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)  -J 'HighSierraMediaKeyEnabler'

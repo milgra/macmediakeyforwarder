@@ -22,7 +22,7 @@ typedef enum SpotifyEPlS SpotifyEPlS;
  */
 
 // The Spotify application.
-@interface SpotifyApplication : SBApplication
+@interface SpotifyApplication : SBApplication <PlayerApplication>
 
 @property (copy, readonly) SpotifyTrack *currentTrack;  // The current playing track.
 @property NSInteger soundVolume;  // The sound output volume (0 = minimum, 100 = maximum)

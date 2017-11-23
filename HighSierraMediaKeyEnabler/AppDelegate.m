@@ -55,7 +55,7 @@
                     break;
                     
                 case NX_KEYTYPE_REWIND:
-                    if ( [iTunes isRunning ] ) [iTunes previousTrack];
+                    if ( [iTunes isRunning ] ) [iTunes backTrack];
                     if ( [spotify isRunning ] ) [spotify previousTrack];
                     break;
                 default:

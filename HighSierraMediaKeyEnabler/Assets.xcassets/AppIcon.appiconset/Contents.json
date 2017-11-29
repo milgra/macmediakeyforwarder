@@ -41,14 +41,14 @@
       "scale" : "2x"
     },
     {
-      "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "ic_play_arrow_48px-512.png",
+      "size" : "512x512",
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "512x512",
+      "idiom" : "mac",
+      "filename" : "appicon.png",
       "scale" : "2x"
     }
   ],

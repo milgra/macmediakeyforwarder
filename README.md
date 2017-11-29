@@ -1,5 +1,8 @@
 # highsierramediakeyenabler
 
+What's new in version 1.3 :
+- previousTrack replaced with backTrack in case of iTunes for a better experience
+
 What's new in version 1.2 :
 - new icon
 - source code is super tight now

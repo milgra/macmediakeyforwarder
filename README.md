@@ -1,13 +1,5 @@
 # highsierramediakeyenabler
 
-What's new in version 1.3 :
-- previousTrack replaced with backTrack in case of iTunes for a better experience
-
-What's new in version 1.2 :
-- new icon
-- source code is super tight now
-- developer id signed, its a trusted app now
-
 MacOS High Sierra Media Key Enabler for iTunes and Spotify.
 
 Controls iTunes and Spotify directly. If both is running it controls both.
@@ -19,3 +11,14 @@ Works with physical buttons only, won't work with touchbar MacBooks.
 Won't work with headphone remote buttons.
 
 Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html)
+
+What's new in version 1.4 :
+- memory leak fixed
+
+What's new in version 1.3 :
+- previousTrack replaced with backTrack in case of iTunes for a better experience
+
+What's new in version 1.2 :
+- new icon
+- source code is super tight now
+- developer id signed, its a trusted app now

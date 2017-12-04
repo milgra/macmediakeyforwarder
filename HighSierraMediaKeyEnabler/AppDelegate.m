@@ -1,11 +1,15 @@
 
     #import "AppDelegate.h"
 
+    // NSUserDefaults key for the last user-chosen priority option
+    static NSString *kUserDefaultsPriorityOptionKey = @"user_priority_option";
+
     @interface AppDelegate ()
     {
         NSStatusItem* statusItem;
         CFMachPortRef eventPort;
         CFRunLoopSourceRef eventPortSource;
+        NSArray<NSMenuItem *> *priorityOptionItems;
     }
 
     @end
@@ -55,20 +59,83 @@
                 switch (keyCode) {
                     case NX_KEYTYPE_PLAY:
                     {
-                        if ( [iTunes isRunning ] ) [iTunes playpause];
-                        if ( [spotify isRunning ] ) [spotify playpause];
+                        
+                        if ( [iTunes isRunning] && [spotify isRunning] ) {
+                            // Both players are active, check the selected option
+                            switch ( self.mediaKeysPriority ) {
+                                case MediaKeysPrioritizeITunes:
+                                    [iTunes playpause];
+                                    break;
+                                    
+                                case MediaKeysPrioritizeSpotify:
+                                    [spotify playpause];
+                                    break;
+                                    
+                                default:
+                                    [iTunes playpause];
+                                    [spotify playpause];
+                                    break;
+                            }
+                        }
+                        else {
+                            if ( [iTunes isRunning ] ) [iTunes playpause];
+                            if ( [spotify isRunning ] ) [spotify playpause];
+                        }
+                        
                         break;
                     }
                     case NX_KEYTYPE_FAST:
                     {
-                        if ( [iTunes isRunning ] ) [iTunes nextTrack];
-                        if ( [spotify isRunning ] ) [spotify nextTrack];
+                        
+                        if ( [iTunes isRunning] && [spotify isRunning] ) {
+                            // Both players are active, check the selected option
+                            switch ( self.mediaKeysPriority ) {
+                                case MediaKeysPrioritizeITunes:
+                                    [iTunes nextTrack];
+                                    break;
+                                    
+                                case MediaKeysPrioritizeSpotify:
+                                    [spotify nextTrack];
+                                    break;
+                                    
+                                default:
+                                    [iTunes nextTrack];
+                                    [spotify nextTrack];
+                                    break;
+                            }
+                        }
+                        else {
+                            if ( [iTunes isRunning ] ) [iTunes nextTrack];
+                            if ( [spotify isRunning ] ) [spotify nextTrack];
+                        }
+                        
                         break;
                     }
                     case NX_KEYTYPE_REWIND:
                     {
-                        if ( [iTunes isRunning ] ) [iTunes backTrack];
-                        if ( [spotify isRunning ] ) [spotify previousTrack];
+                        
+                        if ( [iTunes isRunning] && [spotify isRunning] ) {
+                            // Both players are active, check the selected option
+                            switch ( self.mediaKeysPriority ) {
+                                case MediaKeysPrioritizeITunes:
+                                    [iTunes previousTrack];
+                                    break;
+                                    
+                                case MediaKeysPrioritizeSpotify:
+                                    [spotify previousTrack];
+                                    break;
+                                    
+                                default:
+                                    [iTunes previousTrack];
+                                    [spotify previousTrack];
+                                    break;
+                            }
+                        }
+                        else {
+                            if ( [iTunes isRunning ] ) [iTunes previousTrack];
+                            if ( [spotify isRunning ] ) [spotify previousTrack];
+                        }
+                        
                         break;
                     }
                 }
@@ -80,13 +147,34 @@
 
     - ( void ) applicationDidFinishLaunching : ( NSNotification*) theNotification
     {
+        
+        // We'll save references to the items that define player priority
+        NSMutableArray<NSMenuItem *> *priorityItems = [@[] mutableCopy];
+        
+        // Version string
+        NSDictionary *bundleInfo = [[NSBundle mainBundle] infoDictionary];
+        NSString *versionString = [NSString stringWithFormat:@"Version %@ (build %@)",
+                                   bundleInfo[@"CFBundleShortVersionString"],
+                                   bundleInfo[@"CFBundleVersion"]
+                                   ];
+        
         NSMenu *menu = [ [ NSMenu alloc ] init ];
-        [ menu addItemWithTitle : @"V1.4 Running" action : nil keyEquivalent : @"" ];
+        [ menu addItemWithTitle : versionString action : nil keyEquivalent : @"" ];
+        [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
+        
+        [priorityItems addObject:[ menu addItemWithTitle: @"Send events to both players" action : @selector(prioritizeNone) keyEquivalent : @"" ]];
+        [priorityItems addObject:[ menu addItemWithTitle: @"Prioritize iTunes" action : @selector(prioritizeITunes) keyEquivalent : @"" ]];
+        [priorityItems addObject:[ menu addItemWithTitle: @"Prioritize Spotify" action : @selector(prioritizeSpotify) keyEquivalent : @"" ]];
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
         [ menu addItemWithTitle : @"Donate if you like the app" action : @selector(support) keyEquivalent : @"" ];
         [ menu addItemWithTitle : @"Check for updates" action : @selector(update) keyEquivalent : @"" ];
         [ menu addItemWithTitle : @"Quit" action : @selector(terminate) keyEquivalent : @"" ];
-
+        
+        priorityOptionItems = [priorityItems copy];
+        priorityItems = nil;
+        
+        [self refreshItemTick]; // Update the "tick" for the selected option
+        
         NSImage* image = [ NSImage imageNamed : @"icon" ];
         [ image setTemplate : YES ];
 
@@ -117,4 +205,47 @@
         [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: @"http://milgra.com/high-sierra-media-key-enabler.html"]];
     }
 
+
+
+    #pragma mark - App priorization
+    #pragma mark Handlers
+    - (void)prioritizeNone {
+        _mediaKeysPriority = MediaKeysPrioritizeNone;
+        [[NSUserDefaults standardUserDefaults] setObject:@(_mediaKeysPriority)
+                                                  forKey:kUserDefaultsPriorityOptionKey];
+        [self refreshItemTick];
+    }
+
+    - (void)prioritizeITunes {
+        _mediaKeysPriority = MediaKeysPrioritizeITunes;
+        [[NSUserDefaults standardUserDefaults] setObject:@(_mediaKeysPriority)
+                                                  forKey:kUserDefaultsPriorityOptionKey];
+        [self refreshItemTick];
+    }
+
+    - (void)prioritizeSpotify {
+        _mediaKeysPriority = MediaKeysPrioritizeSpotify;
+        [[NSUserDefaults standardUserDefaults] setObject:@(_mediaKeysPriority)
+                                                  forKey:kUserDefaultsPriorityOptionKey];
+        [self refreshItemTick];
+    }
+
+    #pragma mark UI refresh
+    - (void)refreshItemTick {
+        // Verify if a choice was selected, otherwise mark "None" as the default
+        NSNumber *option = [[NSUserDefaults standardUserDefaults] valueForKey:kUserDefaultsPriorityOptionKey];
+        if ( option ) {
+            _mediaKeysPriority = [option integerValue];
+        }
+        else {
+            [self prioritizeNone]; // This will message refreshItemTick again, so we'll just return after this
+            return;
+        }
+        
+        // Mark with a tick the selected item from priority options
+        for ( NSUInteger i = 0, num = priorityOptionItems.count; i < num; i++ ) {
+            NSMenuItem *item = priorityOptionItems[i];
+            [item setState:( i == _mediaKeysPriority ? NSControlStateValueOn : NSControlStateValueOff )];
+        }
+    }
     @end

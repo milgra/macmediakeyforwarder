@@ -134,7 +134,7 @@
 				TargetAttributes = {
 					336F74471E07E136009BCC1B = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 99QSH5L9VP;
+						DevelopmentTeam = KAX983KY52;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {

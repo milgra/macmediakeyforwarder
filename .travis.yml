@@ -1,6 +1,6 @@
 branches:
- 	only:
-	- master
+    only:
+        - master
  
  language: objective-c
  osx_image: xcode9.1

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3319A9EA1E085353005DB79C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3319A9E81E085353005DB79C /* LICENSE */; };
-		3319A9EB1E085353005DB79C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3319A9E91E085353005DB79C /* README.md */; };
 		336F744D1E07E136009BCC1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F744C1E07E136009BCC1B /* AppDelegate.m */; };
 		336F74501E07E136009BCC1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F744F1E07E136009BCC1B /* main.m */; };
 		336F74521E07E136009BCC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336F74511E07E136009BCC1B /* Assets.xcassets */; };
@@ -136,7 +135,6 @@
 				TargetAttributes = {
 					336F74471E07E136009BCC1B = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = KAX983KY52;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -185,7 +183,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				336F74501E07E136009BCC1B /* main.m in Sources */,
-				3319A9EB1E085353005DB79C /* README.md in Sources */,
 				336F744D1E07E136009BCC1B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,10 +293,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KAX983KY52;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HighSierraMediaKeyEnabler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -314,10 +311,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KAX983KY52;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HighSierraMediaKeyEnabler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;

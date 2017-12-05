@@ -32,4 +32,4 @@ What's new in version 1.2 :
 
 ---
 
-+[![Build Status](https://travis-ci.org/milgra/highsierramediakeyenabler)](https://travis-ci.org/milgra/highsierramediakeyenabler)
++[![Build Status](https://travis-ci.org/milgra/highsierramediakeyenabler#)](https://travis-ci.org/milgra/highsierramediakeyenabler#)

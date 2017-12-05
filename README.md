@@ -11,7 +11,7 @@ Won't work with headphone remote buttons.
 
 Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html)
 
-If you want even more control over what you want to control you should try [beardedspice]http://beardedspice.github.io
+If you want even more control over what you want to control you should try [beardedspice](http://beardedspice.github.io)
 
 ---
 

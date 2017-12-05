@@ -2,17 +2,18 @@
 
 macOS High Sierra Media Key Enabler for iTunes and Spotify.
 
+---
+
 You can prioritize which app you would like to control or you can go with the default behaviour which controls the running app.
-
 The app runs in the menu bar in the form of a subtle and beautiful black dot.
-
 It only works with physical buttons, won't work with the TouchBar.
-
 Won't work with headphone remote buttons.
 
 Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html)
 
 If you want even more control over what you want to control you should try [beardedspice]http://beardedspice.github.io
+
+---
 
 What's new in version 1.5 :
 - now you can explicitly prioritize iTunes or Spotify
@@ -29,4 +30,6 @@ What's new in version 1.2 :
 - source code is super tight now
 - developer id signed, its a trusted app now
 
-+[![Build Status](https://travis-ci.org/milgra/HighSierraMediaKeyEnabler.svg)](https://travis-ci.org/milgra/HighSierraMediaKeyEnabler)
+---
+
++[![Build Status](https://travis-ci.org/milgra/highsierramediakeyenabler)](https://travis-ci.org/milgra/highsierramediakeyenabler)

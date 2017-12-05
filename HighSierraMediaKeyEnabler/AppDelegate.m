@@ -55,7 +55,12 @@
                 switch (keyCode) {
                     case NX_KEYTYPE_PLAY:
                     {
-                        if ( [iTunes isRunning ] ) [iTunes playpause];
+                        if ( [iTunes isRunning ] ) {
+                            [iTunes playpause];
+                        }
+                        else {
+                            [iTunes activate];
+                        }
                         if ( [spotify isRunning ] ) [spotify playpause];
                         break;
                     }

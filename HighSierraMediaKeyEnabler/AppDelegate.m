@@ -53,92 +53,52 @@
 
             if (keyIsPressed)
             {
-                iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-                SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
-
-                switch (keyCode) {
-                    case NX_KEYTYPE_PLAY:
+                switch ( self.mediaKeysPriority ) {
+                    case MediaKeysPrioritizeITunes:
                     {
-                        if ( [iTunes isRunning] && [spotify isRunning] ) {
-                            // Both players are active, check the selected option
-                            switch ( self.mediaKeysPriority ) {
-                                case MediaKeysPrioritizeITunes:
-                                    [iTunes playpause];
-                                    break;
-                                    
-                                case MediaKeysPrioritizeSpotify:
-                                    [spotify playpause];
-                                    break;
-                                    
-                                default:
-                                    [iTunes playpause];
-                                    [spotify playpause];
-                                    break;
-                            }
-                        }
-                        else {
-                            if ( [iTunes isRunning ] ) {
-                                [iTunes playpause];
-                            }
-                            else {
-                                [iTunes activate];
-                            }
-                            if ( [spotify isRunning ] ) [spotify playpause];
+                        iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+                        switch (keyCode) {
+                            case NX_KEYTYPE_PLAY:[iTunes playpause];break;
+                            case NX_KEYTYPE_FAST:[iTunes nextTrack];break;
+                            case NX_KEYTYPE_REWIND:[iTunes backTrack];break;
                         }
                         break;
                     }
-                    case NX_KEYTYPE_FAST:
+                    case MediaKeysPrioritizeSpotify:
                     {
-                        
-                        if ( [iTunes isRunning] && [spotify isRunning] ) {
-                            // Both players are active, check the selected option
-                            switch ( self.mediaKeysPriority ) {
-                                case MediaKeysPrioritizeITunes:
-                                    [iTunes nextTrack];
-                                    break;
-                                    
-                                case MediaKeysPrioritizeSpotify:
-                                    [spotify nextTrack];
-                                    break;
-                                    
-                                default:
-                                    [iTunes nextTrack];
-                                    [spotify nextTrack];
-                                    break;
-                            }
+                        SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+                        switch (keyCode) {
+                            case NX_KEYTYPE_PLAY:[spotify playpause];break;
+                            case NX_KEYTYPE_FAST:[spotify nextTrack];break;
+                            case NX_KEYTYPE_REWIND:[spotify previousTrack];break;
                         }
-                        else {
-                            if ( [iTunes isRunning ] ) [iTunes nextTrack];
-                            if ( [spotify isRunning ] ) [spotify nextTrack];
-                        }
-                        
                         break;
                     }
-                    case NX_KEYTYPE_REWIND:
+                    default:
                     {
-                        
-                        if ( [iTunes isRunning] && [spotify isRunning] ) {
-                            // Both players are active, check the selected option
-                            switch ( self.mediaKeysPriority ) {
-                                case MediaKeysPrioritizeITunes:
-                                    [iTunes previousTrack];
-                                    break;
-                                    
-                                case MediaKeysPrioritizeSpotify:
-                                    [spotify previousTrack];
-                                    break;
-                                    
-                                default:
-                                    [iTunes previousTrack];
-                                    [spotify previousTrack];
-                                    break;
+                        iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+                        SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+                        // legacy behaviour
+                        switch (keyCode) {
+                            case NX_KEYTYPE_PLAY:
+                            {
+                                if ( [spotify isRunning ] ) [spotify playpause];
+                                if ( [iTunes isRunning ] ) [iTunes playpause];
+                                break;
+                            }
+                            case NX_KEYTYPE_FAST:
+                            {
+                                if ( [spotify isRunning ] ) [spotify nextTrack];
+                                if ( [iTunes isRunning ] ) [iTunes nextTrack];
+                                break;
+                            }
+                            case NX_KEYTYPE_REWIND:
+                            {
+                                if ( [spotify isRunning ] ) [spotify previousTrack];
+                                if ( [iTunes isRunning ] ) [iTunes backTrack];
+                                break;
                             }
                         }
-                        else {
-                            if ( [iTunes isRunning ] ) [iTunes previousTrack];
-                            if ( [spotify isRunning ] ) [spotify previousTrack];
-                        }
-                        
                         break;
                     }
                 }

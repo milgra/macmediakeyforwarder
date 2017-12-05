@@ -31,6 +31,7 @@
 		336F74561E07E136009BCC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		336F74641E07E4F6009BCC1B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		337268BF1F8BA311007284E3 /* Spotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		33B952841FD6E8C5003EE4CD /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		33CD48BE1F866DB7000C454F /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		33CD48C11F866DC6000C454F /* iTunes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 		33CD48C71F8671B6000C454F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		336F744E1E07E136009BCC1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				33B952841FD6E8C5003EE4CD /* .travis.yml */,
 				33CD48C71F8671B6000C454F /* icon.png */,
 				33CD48C91F86724F000C454F /* icon@2x.png */,
 				336F74511E07E136009BCC1B /* Assets.xcassets */,

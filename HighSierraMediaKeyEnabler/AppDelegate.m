@@ -58,8 +58,15 @@
                     {
                         iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
                         switch (keyCode) {
+                            // Play/pause
                             case NX_KEYTYPE_PLAY:[iTunes playpause];break;
+                            
+                            // Fast forward
+                            case NX_KEYTYPE_NEXT:
                             case NX_KEYTYPE_FAST:[iTunes nextTrack];break;
+                                
+                            // Rewind
+                            case NX_KEYTYPE_PREVIOUS:
                             case NX_KEYTYPE_REWIND:[iTunes backTrack];break;
                         }
                         break;
@@ -68,8 +75,15 @@
                     {
                         SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
                         switch (keyCode) {
+                            // Play/pause
                             case NX_KEYTYPE_PLAY:[spotify playpause];break;
+                            
+                            // Fast forward
+                            case NX_KEYTYPE_NEXT:
                             case NX_KEYTYPE_FAST:[spotify nextTrack];break;
+                               
+                            // Rewind
+                            case NX_KEYTYPE_PREVIOUS:
                             case NX_KEYTYPE_REWIND:[spotify previousTrack];break;
                         }
                         break;
@@ -80,18 +94,25 @@
                         SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
                         // legacy behaviour
                         switch (keyCode) {
+                            // Play/pause
                             case NX_KEYTYPE_PLAY:
                             {
                                 if ( [spotify isRunning ] ) [spotify playpause];
                                 if ( [iTunes isRunning ] ) [iTunes playpause];
                                 break;
                             }
+                               
+                            // Fast forward
+                            case NX_KEYTYPE_NEXT:
                             case NX_KEYTYPE_FAST:
                             {
                                 if ( [spotify isRunning ] ) [spotify nextTrack];
                                 if ( [iTunes isRunning ] ) [iTunes nextTrack];
                                 break;
                             }
+                               
+                            // Rewind
+                            case NX_KEYTYPE_PREVIOUS:
                             case NX_KEYTYPE_REWIND:
                             {
                                 if ( [spotify isRunning ] ) [spotify previousTrack];

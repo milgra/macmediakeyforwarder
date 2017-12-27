@@ -1,4 +1,4 @@
-# HighSierraMediaKeyEnabler
+# HighSierraMediaKeyEnabler [![Build Status](https://travis-ci.org/milgra/highsierramediakeyenabler.svg?branch=master)](https://travis-ci.org/milgra/highsierramediakeyenabler#)
 
 macOS High Sierra Media Key Enabler for iTunes and Spotify.
 
@@ -12,6 +12,12 @@ Won't work with headphone remote buttons.
 Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html)
 
 If you want even more control over what you want to control you should try [beardedspice](http://beardedspice.github.io)
+
+---
+
+Contributors : michaeldorner, mchaput, ben-kropf, alejandroivan, sh1217sh
+
+Thank you!!!
 
 ---
 
@@ -34,5 +40,3 @@ What's new in version 1.2 :
 - developer id signed, its a trusted app now
 
 ---
-
-+[![Build Status](https://travis-ci.org/milgra/highsierramediakeyenabler.svg?branch=master)](https://travis-ci.org/milgra/highsierramediakeyenabler#)

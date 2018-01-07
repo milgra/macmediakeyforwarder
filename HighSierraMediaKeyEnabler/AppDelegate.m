@@ -195,13 +195,13 @@
         [ menu addItemWithTitle : versionString action : nil keyEquivalent : @"" ];
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
         
-        [priorityItems addObject:[ menu addItemWithTitle: @"Send events to both players" action : @selector(prioritizeNone) keyEquivalent : @"" ]];
-        [priorityItems addObject:[ menu addItemWithTitle: @"Prioritize iTunes" action : @selector(prioritizeITunes) keyEquivalent : @"" ]];
-        [priorityItems addObject:[ menu addItemWithTitle: @"Prioritize Spotify" action : @selector(prioritizeSpotify) keyEquivalent : @"" ]];
+        [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Send events to both players", @"Send events to both players") action : @selector(prioritizeNone) keyEquivalent : @"" ]];
+        [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize iTunes", @"Prioritize iTunes") action : @selector(prioritizeITunes) keyEquivalent : @"" ]];
+        [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize Spotify", @"Prioritize Spotify") action : @selector(prioritizeSpotify) keyEquivalent : @"" ]];
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
-        [ menu addItemWithTitle : @"Donate if you like the app" action : @selector(support) keyEquivalent : @"" ];
-        [ menu addItemWithTitle : @"Check for updates" action : @selector(update) keyEquivalent : @"" ];
-        [ menu addItemWithTitle : @"Quit" action : @selector(terminate) keyEquivalent : @"" ];
+        [ menu addItemWithTitle : NSLocalizedString(@"Donate if you like the app", @"Donate if you like the app") action : @selector(support) keyEquivalent : @"" ];
+        [ menu addItemWithTitle : NSLocalizedString(@"Check for updates", @"Check for updates") action : @selector(update) keyEquivalent : @"" ];
+        [ menu addItemWithTitle : NSLocalizedString(@"Quit", @"Quit") action : @selector(terminate) keyEquivalent : @"" ];
         
         priorityOptionItems = [priorityItems copy];
         priorityItems = nil;

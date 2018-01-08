@@ -4,6 +4,12 @@
     // NSUserDefaults key for the last user-chosen priority option
     static NSString *kUserDefaultsPriorityOptionKey = @"user_priority_option";
 
+    typedef NS_ENUM(NSInteger, KeyHoldState) {
+        KeyHoldStateNone,
+        KeyHoldStateWaiting,
+        KeyHoldStateHolding
+    };
+
     @interface AppDelegate ()
     {
         NSStatusItem* statusItem;
@@ -11,6 +17,8 @@
         CFRunLoopSourceRef eventPortSource;
         NSArray<NSMenuItem *> *priorityOptionItems;
     }
+
+    @property (nonatomic) KeyHoldState keyHoldStatus;
 
     @end
 
@@ -50,39 +58,51 @@
             
             int keyFlags = ([nsEvent data1] & 0x0000FFFF);
             BOOL keyIsPressed = (((keyFlags & 0xFF00) >> 8)) == 0xA;
-
+            
+            iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+            SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+            
             if (keyIsPressed)
             {
                 switch ( self.mediaKeysPriority ) {
                     case MediaKeysPrioritizeITunes:
                     {
-                        iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
                         switch (keyCode) {
                             // Play/pause
                             case NX_KEYTYPE_PLAY:[iTunes playpause];break;
-                            
-                            // Fast forward
-                            case NX_KEYTYPE_NEXT:
-                            case NX_KEYTYPE_FAST:[iTunes nextTrack];break;
-                                
-                            // Rewind
-                            case NX_KEYTYPE_PREVIOUS:
-                            case NX_KEYTYPE_REWIND:[iTunes backTrack];break;
+
+                            default:
+                            {
+                                if (self.keyHoldStatus == KeyHoldStateNone) self.keyHoldStatus = KeyHoldStateWaiting;
+                                else if (self.keyHoldStatus == KeyHoldStateWaiting)
+                                {
+                                    self.keyHoldStatus = KeyHoldStateHolding;
+                                    switch (keyCode) {
+                                        // Fast forward
+                                        case NX_KEYTYPE_NEXT:
+                                        case NX_KEYTYPE_FAST:[iTunes fastForward];break;
+                                        
+                                        // Rewind
+                                        case NX_KEYTYPE_PREVIOUS:
+                                        case NX_KEYTYPE_REWIND:[iTunes rewind];break;
+                                    }
+                                }
+                            }
                         }
                         break;
                     }
                     case MediaKeysPrioritizeSpotify:
                     {
-                        SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+                        
                         switch (keyCode) {
                             // Play/pause
                             case NX_KEYTYPE_PLAY:[spotify playpause];break;
                             
-                            // Fast forward
+                            // Next track
                             case NX_KEYTYPE_NEXT:
                             case NX_KEYTYPE_FAST:[spotify nextTrack];break;
                                
-                            // Rewind
+                            // Previous track or go to start position of current track
                             case NX_KEYTYPE_PREVIOUS:
                             case NX_KEYTYPE_REWIND:[spotify previousTrack];break;
                         }
@@ -90,8 +110,6 @@
                     }
                     default:
                     {
-                        iTunesApplication* iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-                        SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
                         // legacy behaviour
                         switch (keyCode) {
                             // Play/pause
@@ -102,7 +120,7 @@
                                 break;
                             }
                                
-                            // Fast forward
+                            // Next track
                             case NX_KEYTYPE_NEXT:
                             case NX_KEYTYPE_FAST:
                             {
@@ -111,7 +129,7 @@
                                 break;
                             }
                                
-                            // Rewind
+                            // Previous track or go to start position of current track
                             case NX_KEYTYPE_PREVIOUS:
                             case NX_KEYTYPE_REWIND:
                             {
@@ -124,6 +142,37 @@
                     }
                 }
             }
+            else
+            {
+                switch (self.keyHoldStatus)
+                {
+                    case KeyHoldStateWaiting:
+                    {
+                        if (self.mediaKeysPriority == MediaKeysPrioritizeITunes)
+                        {
+                            switch (keyCode) {
+                                // Next track
+                                case NX_KEYTYPE_NEXT:
+                                case NX_KEYTYPE_FAST:[iTunes nextTrack];break;
+                                    
+                                // Previous track or go to start position of current track
+                                case NX_KEYTYPE_PREVIOUS:
+                                case NX_KEYTYPE_REWIND:[iTunes backTrack];break;
+                            }
+                        }
+                        break;
+                    }
+                    case KeyHoldStateHolding:
+                    {
+                        // Stop fast forwarding / rewinding
+                        if (self.mediaKeysPriority == MediaKeysPrioritizeITunes) [iTunes resume];
+                        break;
+                    }
+                    default:break;
+                }
+                self.keyHoldStatus = KeyHoldStateNone;
+            }
+            
             // stop propagation
             return NULL;
         }
@@ -146,18 +195,20 @@
         [ menu addItemWithTitle : versionString action : nil keyEquivalent : @"" ];
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
         
-        [priorityItems addObject:[ menu addItemWithTitle: @"Send events to both players" action : @selector(prioritizeNone) keyEquivalent : @"" ]];
-        [priorityItems addObject:[ menu addItemWithTitle: @"Prioritize iTunes" action : @selector(prioritizeITunes) keyEquivalent : @"" ]];
-        [priorityItems addObject:[ menu addItemWithTitle: @"Prioritize Spotify" action : @selector(prioritizeSpotify) keyEquivalent : @"" ]];
+        [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Send events to both players", @"Send events to both players") action : @selector(prioritizeNone) keyEquivalent : @"" ]];
+        [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize iTunes", @"Prioritize iTunes") action : @selector(prioritizeITunes) keyEquivalent : @"" ]];
+        [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize Spotify", @"Prioritize Spotify") action : @selector(prioritizeSpotify) keyEquivalent : @"" ]];
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
-        [ menu addItemWithTitle : @"Donate if you like the app" action : @selector(support) keyEquivalent : @"" ];
-        [ menu addItemWithTitle : @"Check for updates" action : @selector(update) keyEquivalent : @"" ];
-        [ menu addItemWithTitle : @"Quit" action : @selector(terminate) keyEquivalent : @"" ];
+        [ menu addItemWithTitle : NSLocalizedString(@"Donate if you like the app", @"Donate if you like the app") action : @selector(support) keyEquivalent : @"" ];
+        [ menu addItemWithTitle : NSLocalizedString(@"Check for updates", @"Check for updates") action : @selector(update) keyEquivalent : @"" ];
+        [ menu addItemWithTitle : NSLocalizedString(@"Quit", @"Quit") action : @selector(terminate) keyEquivalent : @"" ];
         
         priorityOptionItems = [priorityItems copy];
         priorityItems = nil;
         
         [self refreshItemTick]; // Update the "tick" for the selected option
+        
+        self.keyHoldStatus = KeyHoldStateNone; // Initialize the enum
         
         NSImage* image = [ NSImage imageNamed : @"icon" ];
         [ image setTemplate : YES ];

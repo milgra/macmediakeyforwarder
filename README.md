@@ -6,7 +6,6 @@ macOS High Sierra Media Key Enabler for iTunes and Spotify.
 
 You can prioritize which app you would like to control or you can go with the default behaviour which controls the running app.
 The app runs in the menu bar in the form of a subtle and beautiful black dot.
-It only works with physical buttons, won't work with the TouchBar.
 Won't work with headphone remote buttons.
 
 Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html)
@@ -20,6 +19,11 @@ Contributors : Michael Dorner (michaeldorner), Matt Chaput (mchaput), Ben Kropf 
 Thank you!!!
 
 ---
+
+What's new in version 1.7 :
+- fast forward/rewind is possible when iTunes is selected explicitly
+- Korean localization
+- rumors say that it works with TouchBar
 
 What's new in version 1.6 :
 - increased compatibility with external keyboards

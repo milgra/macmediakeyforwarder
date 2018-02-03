@@ -61,11 +61,6 @@
             
             iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
             SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
-        
-            //Use masOS 10.13 default behavior if neither iTunes nor Spotify is running
-            if (![spotify isRunning ] && ![iTunes isRunning ] ){
-                return event;
-            }
             
             if (keyIsPressed)
             {
@@ -113,6 +108,50 @@
                         }
                         break;
                     }
+                        
+                    case MediaKeysPrioritizeNoneAndCheck:
+                    {
+                        //Use masOS default behavior if neither iTunes nor Spotify is running
+                        if (![spotify isRunning ] && ![iTunes isRunning ] ){
+                            return event;
+                        }
+                        // legacy behaviour
+                        switch (keyCode) {
+                                // Play/pause
+                            case NX_KEYTYPE_PLAY:
+                            {
+                                if ( [spotify isRunning ] ) [spotify playpause];
+                                if ( [iTunes isRunning ] ) [iTunes playpause];
+                                break;
+                            }
+                                
+                                // Next track
+                            case NX_KEYTYPE_NEXT:
+                            case NX_KEYTYPE_FAST:
+                            {
+                                if ( [spotify isRunning ] ) [spotify nextTrack];
+                                if ( [iTunes isRunning ] ) [iTunes nextTrack];
+                                break;
+                            }
+                                
+                                // Previous track or go to start position of current track
+                            case NX_KEYTYPE_PREVIOUS:
+                            case NX_KEYTYPE_REWIND:
+                            {
+                                if ( [spotify isRunning ] ) [spotify previousTrack];
+                                if ( [iTunes isRunning ] ) [iTunes backTrack];
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                        
+                    case MediaKeysPause:
+                    {
+                        //Use masOS default behavior
+                        return event;
+                    }
+                        
                     default:
                     {
                         // legacy behaviour
@@ -201,8 +240,10 @@
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
         
         [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Send events to both players", @"Send events to both players") action : @selector(prioritizeNone) keyEquivalent : @"" ]];
+        [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Send events to open players", @"Send events to open players") action : @selector(prioritizeNoneAndCheck) keyEquivalent : @"" ]];
         [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize iTunes", @"Prioritize iTunes") action : @selector(prioritizeITunes) keyEquivalent : @"" ]];
         [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize Spotify", @"Prioritize Spotify") action : @selector(prioritizeSpotify) keyEquivalent : @"" ]];
+        [priorityItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Pause MediaKeyHelper", @"Pause MediaKeyHelper") action : @selector(pause) keyEquivalent : @"" ]];
         [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
         [ menu addItemWithTitle : NSLocalizedString(@"Donate if you like the app", @"Donate if you like the app") action : @selector(support) keyEquivalent : @"" ];
         [ menu addItemWithTitle : NSLocalizedString(@"Check for updates", @"Check for updates") action : @selector(update) keyEquivalent : @"" ];
@@ -256,6 +297,13 @@
         [self refreshItemTick];
     }
 
+    - (void)prioritizeNoneAndCheck {
+        _mediaKeysPriority = MediaKeysPrioritizeNoneAndCheck;
+        [[NSUserDefaults standardUserDefaults] setObject:@(_mediaKeysPriority)
+                                                  forKey:kUserDefaultsPriorityOptionKey];
+        [self refreshItemTick];
+    }
+
     - (void)prioritizeITunes {
         _mediaKeysPriority = MediaKeysPrioritizeITunes;
         [[NSUserDefaults standardUserDefaults] setObject:@(_mediaKeysPriority)
@@ -265,6 +313,13 @@
 
     - (void)prioritizeSpotify {
         _mediaKeysPriority = MediaKeysPrioritizeSpotify;
+        [[NSUserDefaults standardUserDefaults] setObject:@(_mediaKeysPriority)
+                                                  forKey:kUserDefaultsPriorityOptionKey];
+        [self refreshItemTick];
+    }
+
+    - (void)pause {
+        _mediaKeysPriority = MediaKeysPause;
         [[NSUserDefaults standardUserDefaults] setObject:@(_mediaKeysPriority)
                                                   forKey:kUserDefaultsPriorityOptionKey];
         [self refreshItemTick];

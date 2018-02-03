@@ -61,6 +61,11 @@
             
             iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
             SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+        
+            //Use masOS 10.13 default behavior if neither iTunes nor Spotify is running
+            if (![spotify isRunning ] && ![iTunes isRunning ] ){
+                return event;
+            }
             
             if (keyIsPressed)
             {

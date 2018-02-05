@@ -6,7 +6,6 @@ macOS High Sierra Media Key Enabler for iTunes and Spotify.
 
 You can prioritize which app you would like to control or you can go with the default behaviour which controls the running app.
 The app runs in the menu bar in the form of a subtle and beautiful black dot.
-Won't work with headphone remote buttons.
 
 Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html)
 
@@ -24,6 +23,7 @@ What's new in version 1.8 :
 - added pause menu option
 - added pause automatically menu option : if no music player is running macOS default behavior is used and keys are forwarded to currently active media player
 - german localization
+- fixed headphone button issue
 - added macOS Sierra compatibility if you want explicit music player control there
 
 What's new in version 1.7 :

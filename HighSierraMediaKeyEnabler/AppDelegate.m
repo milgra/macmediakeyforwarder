@@ -1,5 +1,6 @@
 
     #import "AppDelegate.h"
+    #import <MediaPlayer/MediaPlayer.h>
 
     // NSUserDefaults key for the last user-chosen priority option
     static NSString *kUserDefaultsPriorityOptionKey = @"user_priority_option";
@@ -248,6 +249,12 @@
         [ menu addItemWithTitle : NSLocalizedString(@"Donate if you like the app", @"Donate if you like the app") action : @selector(support) keyEquivalent : @"" ];
         [ menu addItemWithTitle : NSLocalizedString(@"Check for updates", @"Check for updates") action : @selector(update) keyEquivalent : @"" ];
         [ menu addItemWithTitle : NSLocalizedString(@"Quit", @"Quit") action : @selector(terminate) keyEquivalent : @"" ];
+        
+        // Always return success when system media control is sent to the app.
+        // This will prevent unexpected behavior when the headphone button is pressed.
+        [[MPRemoteCommandCenter sharedCommandCenter].togglePlayPauseCommand addTargetWithHandler: ^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent *event) {
+            return MPRemoteCommandHandlerStatusSuccess;
+        }];
         
         priorityOptionItems = [priorityItems copy];
         priorityItems = nil;

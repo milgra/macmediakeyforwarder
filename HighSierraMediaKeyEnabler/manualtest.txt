@@ -1,0 +1,35 @@
+Start with clean install ( delete app and com.milgra.hmske.plist from ~/Library/Preferences )
+
+Default state :
+    - check menu :
+        - pause items should be disabled
+        - send events to both players should be selected
+    - check if app controls itunes/spotify individually and both running.
+    - app shouldn't start music players automatically.
+
+iTunes state :
+    - select Prioritize iTunes from the menu
+    - check if app starts up iTunes automatically
+    - check if play/pause/prev/next is working
+    - check if fast forward/rewind is working
+    - restart app and check if prioritize iTunes remains selected
+
+Spotify state :
+    - select Prioritize Spotify from the menu
+    - check if app starts up Spotify automatically
+    - check if play/pause/prev/next is working
+    - check if fast forward/rewind is working
+    - restart app and check if prioritize Spotify remains selected
+
+Pause state :
+    - select pause from the menu
+    - app shouldn't forward events to player
+    - macOS default media key behaviour should happen ( try it with a youtube video in safari )
+
+Auto-Pause state :
+    - select pause if no player is running from the menu
+    - close iTunes and Spotify
+        - app shouldn't forward events to player
+        - macOS default media key behaviour should happen
+    - open iTunes or Spotify
+        - app should behave based on the selected priority option

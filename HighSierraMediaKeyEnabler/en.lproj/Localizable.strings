@@ -7,10 +7,10 @@
 */
 
 "Send events to both players" = "Send events to both players";
-"Send events to open players" = "Send events to open players";
 "Prioritize iTunes" = "Prioritize iTunes";
 "Prioritize Spotify" = "Prioritize Spotify";
-"Pause MediaKeyHelper" = "Pause MediaKeyHelper";
+"Pause" = "Pause";
+"Pause if no player is running" = "Pause if no player is running";
 "Donate if you like the app" = "Donate if you like the app";
 "Check for updates" = "Check for updates";
 "Quit" = "Quit";

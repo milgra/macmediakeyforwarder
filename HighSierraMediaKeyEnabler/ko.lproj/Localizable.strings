@@ -7,10 +7,10 @@
 */
 
 "Send events to both players" = "iTunes, Spotify에 모두 이벤트 보내기";
-"Send events to open players" = "열려있는 플레이어에 이벤트 보내기";
 "Prioritize iTunes" = "iTunes에 우선권 부여";
 "Prioritize Spotify" = "Spotify에 우선권 부여";
-"Pause MediaKeyHelper" = "macOS 기본값 사용";
+"Pause" = "Pause";
+"Pause if no player is running" = "Pause if no player is running";
 "Donate if you like the app" = "이 앱이 마음에 들면 기부해주세요!";
 "Check for updates" = "업데이트 확인";
 "Quit" = "종료";

@@ -10,7 +10,8 @@
 "Send events to open players" = "Eingaben an geöffnete Player senden";
 "Prioritize iTunes" = "iTunes priorisieren";
 "Prioritize Spotify" = "Spotify priorisieren";
-"Pause MediaKeyHelper" = "MediaKeyHelper pausieren";
+"Pause" = "Pause";
+"Pause if no player is running" = "Pause if no player is running";
 "Donate if you like the app" = "Spenden";
 "Check for updates" = "Nach Updates suchen";
 "Quit" = "Beenden";

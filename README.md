@@ -14,15 +14,17 @@ If you want even more control over what you want to control you should try [bear
 
 ---
 
-Contributors : Michael Dorner (michaeldorner), Matt Chaput (mchaput), Ben Kropf (ben-kropf), Alejandro Iván (alejandroivan), Sungho Lee (sh1217sh)
+Contributors : Michael Dorner (michaeldorner), Matt Chaput (mchaput), Ben Kropf (ben-kropf), Alejandro Iván (alejandroivan), Sungho Lee (sh1217sh), maciboy
 
 Thank you!!!
 
 ---
 
-What's new in version 1.7 build 2:
-- Added check if iTunes or Spotify are running, if both are not running the new macOS default behavior is used and keys are forwarded to currently active media player
-- German localization
+What's new in version 1.8 :
+- added pause menu option
+- added pause automatically menu option : if no music player is running macOS default behavior is used and keys are forwarded to currently active media player
+- german localization
+- added macOS Sierra compatibility if you want explicit music player control there
 
 What's new in version 1.7 :
 - fast forward/rewind is possible when iTunes is selected explicitly

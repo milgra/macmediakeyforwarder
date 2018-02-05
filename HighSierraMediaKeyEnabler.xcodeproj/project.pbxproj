@@ -13,6 +13,7 @@
 		336F74521E07E136009BCC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336F74511E07E136009BCC1B /* Assets.xcassets */; };
 		336F74551E07E136009BCC1B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336F74531E07E136009BCC1B /* MainMenu.xib */; };
 		336F74651E07E4F6009BCC1B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 336F74641E07E4F6009BCC1B /* CoreAudio.framework */; };
+		338A08B02028840D001F1ED3 /* manualtest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 338A08AF2028840D001F1ED3 /* manualtest.txt */; };
 		33CD48BF1F866DB7000C454F /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD48BE1F866DB7000C454F /* ScriptingBridge.framework */; };
 		33CD48CB1F867394000C454F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CD48C71F8671B6000C454F /* icon.png */; };
 		33CD48CC1F867408000C454F /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CD48C91F86724F000C454F /* icon@2x.png */; };
@@ -32,6 +33,7 @@
 		336F74561E07E136009BCC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		336F74641E07E4F6009BCC1B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		337268BF1F8BA311007284E3 /* Spotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		338A08AF2028840D001F1ED3 /* manualtest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = manualtest.txt; sourceTree = "<group>"; };
 		33B952841FD6E8C5003EE4CD /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		33CD48BE1F866DB7000C454F /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		33CD48C11F866DC6000C454F /* iTunes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				336F74561E07E136009BCC1B /* Info.plist */,
 				3319A9E81E085353005DB79C /* LICENSE */,
 				3319A9E91E085353005DB79C /* README.md */,
+				338A08AF2028840D001F1ED3 /* manualtest.txt */,
 				336F744F1E07E136009BCC1B /* main.m */,
 				A5999C4E1FF3BB89009905E1 /* Localizable.strings */,
 			);
@@ -176,6 +179,7 @@
 			files = (
 				336F74521E07E136009BCC1B /* Assets.xcassets in Resources */,
 				A5999C4C1FF3BB89009905E1 /* Localizable.strings in Resources */,
+				338A08B02028840D001F1ED3 /* manualtest.txt in Resources */,
 				33CD48CC1F867408000C454F /* icon@2x.png in Resources */,
 				336F74551E07E136009BCC1B /* MainMenu.xib in Resources */,
 				3319A9EA1E085353005DB79C /* LICENSE in Resources */,

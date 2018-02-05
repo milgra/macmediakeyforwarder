@@ -20,6 +20,10 @@ Thank you!!!
 
 ---
 
+What's new in version 1.7 build 2:
+- Added check if iTunes or Spotify are running, if both are not running the new macOS default behavior is used and keys are forwarded to currently active media player
+- German localization
+
 What's new in version 1.7 :
 - fast forward/rewind is possible when iTunes is selected explicitly
 - Korean localization

@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  HighSierraMediaKeyEnabler
+
+  Created by maciboy on 2018. 02. 03..
+  Copyright © 2018년 Milan Toth. All rights reserved.
+*/
+
+"Send events to both players" = "Eingaben an beide Player senden";
+"Send events to open players" = "Eingaben an geöffnete Player senden";
+"Prioritize iTunes" = "iTunes priorisieren";
+"Prioritize Spotify" = "Spotify priorisieren";
+"Pause MediaKeyHelper" = "MediaKeyHelper pausieren";
+"Donate if you like the app" = "Spenden";
+"Check for updates" = "Nach Updates suchen";
+"Quit" = "Beenden";

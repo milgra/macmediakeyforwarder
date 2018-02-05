@@ -9,8 +9,8 @@
 "Send events to both players" = "iTunes, Spotify에 모두 이벤트 보내기";
 "Prioritize iTunes" = "iTunes에 우선권 부여";
 "Prioritize Spotify" = "Spotify에 우선권 부여";
-"Pause" = "Pause";
-"Pause if no player is running" = "Pause if no player is running";
+"Pause" = "일시정지 (macOS 기본값 사용)";
+"Pause if no player is running" = "iTunes 또는 Sporify가 열려있지 않으면 일시정지";
 "Donate if you like the app" = "이 앱이 마음에 들면 기부해주세요!";
 "Check for updates" = "업데이트 확인";
 "Quit" = "종료";

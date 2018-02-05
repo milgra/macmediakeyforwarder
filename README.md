@@ -13,7 +13,7 @@ If you want even more control over what you want to control you should try [bear
 
 ---
 
-Contributors : Michael Dorner (michaeldorner), Matt Chaput (mchaput), Ben Kropf (ben-kropf), Alejandro Iván (alejandroivan), Sungho Lee (sh1217sh), maciboy
+Contributors : Michael Dorner (michaeldorner), Matt Chaput (mchaput), Ben Kropf (ben-kropf), Alejandro Iván (alejandroivan), Sungho Lee (sh1217sh), Björn Büschke (maciboy)
 
 Thank you!!!
 

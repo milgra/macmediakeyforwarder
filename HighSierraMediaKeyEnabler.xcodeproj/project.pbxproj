@@ -20,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		112AF55920263497006937BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2C9625F520295D9F00F0C47E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3319A9E81E085353005DB79C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		3319A9E91E085353005DB79C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		336F74481E07E136009BCC1B /* HighSierraMediaKeyEnabler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighSierraMediaKeyEnabler.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +160,7 @@
 				Base,
 				ko,
 				de,
+				es,
 			);
 			mainGroup = 336F743F1E07E136009BCC1B;
 			productRefGroup = 336F74491E07E136009BCC1B /* Products */;
@@ -212,6 +214,7 @@
 				A5999C4D1FF3BB89009905E1 /* en */,
 				A5999C4F1FF3BB98009905E1 /* ko */,
 				112AF55920263497006937BF /* de */,
+				2C9625F520295D9F00F0C47E /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

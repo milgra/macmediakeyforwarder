@@ -22,7 +22,8 @@ Thank you!!!
 What's new in version 1.8 :
 - added pause menu option
 - added pause automatically menu option : if no music player is running macOS default behavior is used and keys are forwarded to currently active media player
-- german localization
+- German localization
+- Spanish localization
 - fixed headphone button issue
 - added macOS Sierra compatibility if you want explicit music player control there
 

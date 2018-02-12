@@ -13,7 +13,7 @@ If you want even more control over what you want to control you should try [bear
 
 ---
 
-Contributors : Michael Dorner (michaeldorner), Matt Chaput (mchaput), Ben Kropf (ben-kropf), Alejandro Iván (alejandroivan), Sungho Lee (sh1217sh), Björn Büschke (maciboy)
+Contributors : Michael Dorner (michaeldorner), Matt Chaput (mchaput), Ben Kropf (ben-kropf), Alejandro Iván (alejandroivan), Sungho Lee (sh1217sh), Björn Büschke (maciboy), Sergei Solovev (e1ectron)
 
 Thank you!!!
 
@@ -22,6 +22,7 @@ Thank you!!!
 What's new in version 1.8 :
 - added pause menu option
 - added pause automatically menu option : if no music player is running macOS default behavior is used and keys are forwarded to currently active media player
+- Russian localization
 - German localization
 - Spanish localization
 - fixed headphone button issue

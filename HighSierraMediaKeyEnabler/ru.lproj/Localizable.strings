@@ -1,0 +1,16 @@
+/*
+  Localizable.strings
+  HighSierraMediaKeyEnabler
+
+  Created by e1ectron on 2018. 02. 12..
+  Copyright © 2018년 Milan Toth. All rights reserved.
+*/
+
+"Send events to both players" = "Отправлять события на оба плеера";
+"Prioritize iTunes" = "Предпочитать iTunes";
+"Prioritize Spotify" = "Предпочитать Spotify";
+"Pause" = "Пауза";
+"Pause if no player is running" = "Пауза, если ни один плеер не запущен";
+"Donate if you like the app" = "Поддержать разработку";
+"Check for updates" = "Проверить обновления";
+"Quit" = "Завершить";

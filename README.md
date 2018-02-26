@@ -19,6 +19,9 @@ Thank you!!!
 
 ---
 
+What's new in version 1.9 :
+- added open at login menu option
+
 What's new in version 1.8 :
 - added pause menu option
 - added pause automatically menu option : if no music player is running macOS default behavior is used and keys are forwarded to currently active media player

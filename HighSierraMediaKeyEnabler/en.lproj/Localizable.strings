@@ -7,6 +7,7 @@
 */
 
 "Send events to both players" = "Send events to both players";
+"Open at login" = "Open at login";
 "Prioritize iTunes" = "Prioritize iTunes";
 "Prioritize Spotify" = "Prioritize Spotify";
 "Pause" = "Pause";

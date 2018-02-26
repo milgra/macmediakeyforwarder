@@ -16,8 +16,6 @@
 		33CD48CB1F867394000C454F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CD48C71F8671B6000C454F /* icon.png */; };
 		33CD48CC1F867408000C454F /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CD48C91F86724F000C454F /* icon@2x.png */; };
 		6E40986F20360B0300F03845 /* GBLaunchAtLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40986C20360B0300F03845 /* GBLaunchAtLogin.m */; };
-		6E40987020360B0300F03845 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6E40986D20360B0300F03845 /* LICENSE */; };
-		6E40987120360B0300F03845 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6E40986E20360B0300F03845 /* README.md */; };
 		A5999C4C1FF3BB89009905E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5999C4E1FF3BB89009905E1 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -197,10 +195,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E40987020360B0300F03845 /* LICENSE in Resources */,
 				336F74521E07E136009BCC1B /* Assets.xcassets in Resources */,
 				A5999C4C1FF3BB89009905E1 /* Localizable.strings in Resources */,
-				6E40987120360B0300F03845 /* README.md in Resources */,
 				33CD48CC1F867408000C454F /* icon@2x.png in Resources */,
 				336F74551E07E136009BCC1B /* MainMenu.xib in Resources */,
 				33CD48CB1F867394000C454F /* icon.png in Resources */,

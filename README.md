@@ -21,6 +21,7 @@ Thank you!!!
 
 What's new in version 1.9 :
 - added open at login menu option
+- German localization update
 
 What's new in version 1.8 :
 - added pause menu option

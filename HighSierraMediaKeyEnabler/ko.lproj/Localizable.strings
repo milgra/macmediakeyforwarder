@@ -7,6 +7,7 @@
 */
 
 "Send events to both players" = "iTunes, Spotify에 모두 이벤트 보내기";
+"Open at login" = "부팅시 자동 실행";
 "Prioritize iTunes" = "iTunes에 우선권 부여";
 "Prioritize Spotify" = "Spotify에 우선권 부여";
 "Pause" = "일시정지 (macOS 기본값 사용)";

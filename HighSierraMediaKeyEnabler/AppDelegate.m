@@ -2,7 +2,6 @@
 #import "GBLaunchAtLogin.h"
 #import "iTunes.h"
 #import "Spotify.h"
-#import <MediaPlayer/MediaPlayer.h>
 #import <ScriptingBridge/ScriptingBridge.h>
 
 typedef NS_ENUM(NSInteger, MediaKeysPrioritize)
@@ -289,14 +288,6 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     {
         pauseState = [option integerValue];
     }
-    
-    // Always return success when system media control is sent to the app.
-    // This will prevent unexpected behavior when the headphone button is pressed.
-    
-    [[MPRemoteCommandCenter sharedCommandCenter].togglePlayPauseCommand addTargetWithHandler: ^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent *event)
-     {
-         return MPRemoteCommandHandlerStatusSuccess;
-     }];
     
     // Version string
     

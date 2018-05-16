@@ -1,0 +1,18 @@
+
+/* 
+  Localizable.strings
+  HighSierraMediaKeyEnabler
+
+  Created by Sungho Lee on 2017. 12. 27..
+  Copyright © 2017년 Milan Toth. All rights reserved.
+*/
+
+"Send events to both players" = "Send handling til begge afspillere";
+"Open at login" = "Åbn ved login";
+"Prioritize iTunes" = "Prioriter iTunes";
+"Prioritize Spotify" = "Prioriter Spotify";
+"Pause" = "Pause";
+"Pause if no player is running" = "Pause hvis ingen afspiller kører";
+"Donate if you like the app" = "Doner hvis du synes om appen";
+"Check for updates" = "Søg efter opdateringer";
+"Quit" = "Afslut";

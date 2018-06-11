@@ -89,6 +89,17 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
             return event;
         }
         
+        int keyCode = (([nsEvent data1] & 0xFFFF0000) >> 16);
+        
+        if (keyCode != NX_KEYTYPE_PLAY &&
+            keyCode != NX_KEYTYPE_FAST &&
+            keyCode != NX_KEYTYPE_REWIND &&
+            keyCode != NX_KEYTYPE_PREVIOUS &&
+            keyCode != NX_KEYTYPE_NEXT)
+        {
+            return event;
+        }
+        
         iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
         SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
         
@@ -103,17 +114,6 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
             {
                 return event;
             }
-        }
-        
-        int keyCode = (([nsEvent data1] & 0xFFFF0000) >> 16);
-        
-        if (keyCode != NX_KEYTYPE_PLAY &&
-            keyCode != NX_KEYTYPE_FAST &&
-            keyCode != NX_KEYTYPE_REWIND &&
-            keyCode != NX_KEYTYPE_PREVIOUS &&
-            keyCode != NX_KEYTYPE_NEXT)
-        {
-            return event;
         }
         
         int keyFlags = ([nsEvent data1] & 0x0000FFFF);

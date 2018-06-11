@@ -335,8 +335,23 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     eventPort = CGEventTapCreate( kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault, CGEventMaskBit(NX_SYSDEFINED), tapEventCallback, (__bridge void * _Nullable)(self));
     eventPortSource = CFMachPortCreateRunLoopSource( kCFAllocatorSystemDefault, eventPort, 0 );
     
-    CFRunLoopAddSource( CFRunLoopGetCurrent(), eventPortSource, kCFRunLoopCommonModes );
-    CFRunLoopRun();
+    [self startEventSession];
+}
+
+- ( void ) startEventSession
+{
+    if (pauseState != PauseStatePause && !CFRunLoopContainsSource(CFRunLoopGetCurrent(), eventPortSource, kCFRunLoopCommonModes)) {
+        CFRunLoopAddSource( CFRunLoopGetCurrent(), eventPortSource, kCFRunLoopCommonModes );
+        CFRunLoopRun();
+    }
+}
+
+- ( void ) stopEventSession
+{
+    if (CFRunLoopContainsSource(CFRunLoopGetCurrent(), eventPortSource, kCFRunLoopCommonModes)) {
+        CFRunLoopRemoveSource( CFRunLoopGetCurrent(), eventPortSource, kCFRunLoopCommonModes );
+        CFRunLoopStop(CFRunLoopGetCurrent());
+    }
 }
 
 - ( void ) terminate
@@ -383,11 +398,14 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     if ( pauseState != PauseStatePause )
     {
         pauseState = PauseStatePause;
+        [self stopEventSession];
     }
     else
     {
         pauseState = PauseStateNone;
+        [self startEventSession];
     }
+
     [[NSUserDefaults standardUserDefaults] setObject:@(pauseState) forKey:kUserDefaultsPauseOptionKey];
     [self updatePauseState];
 }
@@ -404,6 +422,8 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     }
     [[NSUserDefaults standardUserDefaults] setObject:@(pauseState) forKey:kUserDefaultsPauseOptionKey];
     [self updatePauseState];
+    
+    [self startEventSession];
 }
 
 #pragma mark - Startup Item

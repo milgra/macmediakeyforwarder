@@ -16,9 +16,9 @@ Download the compiled application from my [homepage](http://milgra.com/high-sier
 
 If you want even more control over what you want to control you should try [beardedspice](http://beardedspice.github.io).
 
-Installatio :
+Installation :
 
-Apple increased MacOS security with the latest version. Besides allowing MMKF to install you have to also add it as a trusted app in System Preferences -> Security & Privacy -> Privacy tab -> Accessibility menuitem on the left. You have to click on the lock on the lower left corner, click on plus icon under the right table and select Mac Media Key Forwarder under Applications.  
+Apple increased MacOS security with the latest version. Besides allowing MMKF to install in various popups you also have to add it as a trusted app in System Preferences -> Security & Privacy -> Privacy tab -> Accessibility menuitem on the left. You have to click on the lock at the lower left corner then click on the plus icon under app list table and select Mac Media Key Forwarder from Applications folder.  
 
 Issues you should know about :
 
@@ -41,6 +41,14 @@ Contributors :
 Thank you!!!
 
 ---
+
+What's new in version 2.0 :
+- app renamed to Mac Media Key Forwarder
+- Hungarian localization
+- updated icon
+- Open At Login state is checked every time the menu is opened so it shows an updated state
+- added installation steps to readme because increased MacOS security made it more confusing
+- added event-tap related issues to readme because it can cause head scratches in some special cases 
 
 What's new in version 1.9 :
 - added open at login menu option

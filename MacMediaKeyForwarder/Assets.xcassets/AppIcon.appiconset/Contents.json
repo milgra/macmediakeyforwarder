@@ -3,13 +3,13 @@
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "icon.png",
+      "filename" : "appicon.png",
       "scale" : "1x"
     },
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "icon@2x.png",
+      "filename" : "appicon2x.png",
       "scale" : "2x"
     },
     {

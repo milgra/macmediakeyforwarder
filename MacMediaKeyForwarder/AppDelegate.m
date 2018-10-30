@@ -297,6 +297,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
                                bundleInfo[@"CFBundleVersion"] ];
     
     NSMenu *menu = [ [ NSMenu alloc ] init ];
+    [ menu setDelegate : self ];
     [ menu addItemWithTitle : versionString action : nil keyEquivalent : @"" ];
     [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
     

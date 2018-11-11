@@ -10,7 +10,7 @@ Forwards media keys to iTunes or Spotify directly.
 
 You can prioritize which app you would like to control or you can go with the default behaviour which controls the running app.
 
-The app runs in the menu bar in the form of a subtle and beautiful black dot.
+The app runs in the menu bar.
 
 Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html).
 

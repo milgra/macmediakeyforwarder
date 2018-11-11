@@ -1,19 +1,26 @@
 # HighSierraMediaKeyEnabler [![Build Status](https://travis-ci.org/milgra/highsierramediakeyenabler.svg?branch=master)](https://travis-ci.org/milgra/highsierramediakeyenabler#)
 
-macOS High Sierra Media Key Enabler for iTunes and Spotify.
+macOS High Sierra Media Key Enabler for [iTunes](https://www.apple.com/itunes/) and [Spotify](http://www.spotify.com).
 
 ---
 
 You can prioritize which app you would like to control or you can go with the default behaviour which controls the running app.
 The app runs in the menu bar in the form of a subtle and beautiful black dot.
 
-Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html)
+Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html).
 
-If you want even more control over what you want to control you should try [beardedspice](http://beardedspice.github.io)
+If you want even more control over what you want to control you should try [beardedspice](http://beardedspice.github.io).
 
 ---
 
-Contributors : Michael Dorner (michaeldorner), Matt Chaput (mchaput), Ben Kropf (ben-kropf), Alejandro Iván (alejandroivan), Sungho Lee (sh1217sh), Björn Büschke (maciboy), Sergei Solovev (e1ectron)
+Contributors : 
+* Michael Dorner ([@michaeldorner](http://github.com/michaeldorner))
+* Matt Chaput ([@mchaput](http://github.com/mchaput))
+* Ben Kropf ([@ben-kropf](http://github.com/ben-kropf))
+* Alejandro Iván ([@alejandroivan](http://github.com/alejandroivan))
+* Sungho Lee ([@sh1217sh](http://github.com/sh1217sh))
+* Björn Büschke ([@maciboy](http://github.com/maciboy))
+* Sergei Solovev ([@e1ectron](http://github.com/e1ectron))
 
 Thank you!!!
 

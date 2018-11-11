@@ -16,11 +16,11 @@ Download the compiled application from my [homepage](http://milgra.com/high-sier
 
 If you want even more control over what you want to control you should try [beardedspice](http://beardedspice.github.io).
 
-Installation :
+**Installation**
 
 Apple increased MacOS security with the latest version. Besides allowing MMKF to install in various popups you also have to add it as a trusted app in System Preferences -> Security & Privacy -> Privacy tab -> Accessibility menuitem on the left. You have to click on the lock at the lower left corner then click on the plus icon under app list table and select Mac Media Key Forwarder from Applications folder.  
 
-Issues you should know about :
+**Issues you should know about**
 
 The app listens on the event tap for key events. This causes problems in some rare cases, like 
 - when changing search engine in Safari's preferences window

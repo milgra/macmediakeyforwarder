@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3333F8962198687500816A9F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3333F8932198687500816A9F /* LICENSE */; };
 		3333F8972198687500816A9F /* GBLaunchAtLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3333F8942198687500816A9F /* GBLaunchAtLogin.m */; };
-		3333F8982198687500816A9F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3333F8952198687500816A9F /* README.md */; };
 		336F744D1E07E136009BCC1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F744C1E07E136009BCC1B /* AppDelegate.m */; };
 		336F74501E07E136009BCC1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F744F1E07E136009BCC1B /* main.m */; };
 		336F74521E07E136009BCC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336F74511E07E136009BCC1B /* Assets.xcassets */; };
@@ -198,10 +196,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3333F8962198687500816A9F /* LICENSE in Resources */,
 				336F74521E07E136009BCC1B /* Assets.xcassets in Resources */,
 				A5999C4C1FF3BB89009905E1 /* Localizable.strings in Resources */,
-				3333F8982198687500816A9F /* README.md in Resources */,
 				33CD48CC1F867408000C454F /* icon@2x.png in Resources */,
 				336F74551E07E136009BCC1B /* MainMenu.xib in Resources */,
 				33CD48CB1F867394000C454F /* icon.png in Resources */,

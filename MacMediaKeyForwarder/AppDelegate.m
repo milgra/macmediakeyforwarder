@@ -325,7 +325,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     [ image setTemplate : YES ];
     
     statusItem = [ [ NSStatusBar systemStatusBar ] statusItemWithLength : NSVariableStatusItemLength ];
-    [ statusItem setToolTip : @"High Sierra Media Key Enabler" ];
+    [ statusItem setToolTip : @"Mac Media Key Forwarder" ];
     [ statusItem setMenu : menu ];
     [ statusItem setImage : image ];
     

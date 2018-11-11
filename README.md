@@ -1,15 +1,31 @@
-# HighSierraMediaKeyEnabler [![Build Status](https://travis-ci.org/milgra/highsierramediakeyenabler.svg?branch=master)](https://travis-ci.org/milgra/highsierramediakeyenabler#)
+# MacMediaKeyForwarder [![Build Status](https://travis-ci.org/milgra/highsierramediakeyenabler.svg?branch=master)](https://travis-ci.org/milgra/highsierramediakeyenabler#)
 
-macOS High Sierra Media Key Enabler for [iTunes](https://www.apple.com/itunes/) and [Spotify](http://www.spotify.com).
+( Formerly known as High Sierra Media Key Enabler )
+
+Mac Media Key Forwarder for [iTunes](https://www.apple.com/itunes/) and [Spotify](http://www.spotify.com).
 
 ---
 
+Forwards media keys to iTunes or Spotify directly.
+
 You can prioritize which app you would like to control or you can go with the default behaviour which controls the running app.
+
 The app runs in the menu bar in the form of a subtle and beautiful black dot.
 
 Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html).
 
 If you want even more control over what you want to control you should try [beardedspice](http://beardedspice.github.io).
+
+Installatio :
+
+Apple increased MacOS security with the latest version. Besides allowing MMKF to install you have to also add it as a trusted app in System Preferences -> Security & Privacy -> Privacy tab -> Accessibility menuitem on the left. You have to click on the lock on the lower left corner, click on plus icon under the right table and select Mac Media Key Forwarder under Applications.  
+
+Issues you should know about :
+
+The app listens on the event tap for key events. This causes problems in some rare cases, like 
+- when changing search engine in Safari's preferences window
+- when trying to allow third-party kernel extensions
+In these cases simply pause Mac Media Key Enabler from it's menu.
 
 ---
 

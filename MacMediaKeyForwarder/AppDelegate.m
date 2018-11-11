@@ -473,6 +473,12 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     [startupItem setState: [GBLaunchAtLogin isLoginItem] ? NSControlStateValueOn : NSControlStateValueOff];
 }
 
+- (void)menuWillOpen:(NSMenu *)menu
+{
+    [self updateStartupItemState];
+}
+
+
 @end
 
 

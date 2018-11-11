@@ -6,7 +6,7 @@ language: objective-c
 osx_image: xcode9.1
 
 script:
-- xcodebuild -project HighSierraMediaKeyEnabler.xcodeproj -scheme "HighSierraMediaKeyEnabler" build
+- xcodebuild -project MacMediaKeyForwarder.xcodeproj -scheme "MacMediaKeyForwarder" build
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)  -J 'HighSierraMediaKeyEnabler'
+- bash <(curl -s https://codecov.io/bash)  -J 'MacMediaKeyForwarder'

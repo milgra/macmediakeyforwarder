@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3333F8962198687500816A9F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3333F8932198687500816A9F /* LICENSE */; };
+		3333F8972198687500816A9F /* GBLaunchAtLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3333F8942198687500816A9F /* GBLaunchAtLogin.m */; };
+		3333F8982198687500816A9F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3333F8952198687500816A9F /* README.md */; };
 		336F744D1E07E136009BCC1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F744C1E07E136009BCC1B /* AppDelegate.m */; };
 		336F74501E07E136009BCC1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 336F744F1E07E136009BCC1B /* main.m */; };
 		336F74521E07E136009BCC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336F74511E07E136009BCC1B /* Assets.xcassets */; };
@@ -15,7 +18,6 @@
 		33CD48BF1F866DB7000C454F /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD48BE1F866DB7000C454F /* ScriptingBridge.framework */; };
 		33CD48CB1F867394000C454F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CD48C71F8671B6000C454F /* icon.png */; };
 		33CD48CC1F867408000C454F /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CD48C91F86724F000C454F /* icon@2x.png */; };
-		6E40986F20360B0300F03845 /* GBLaunchAtLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40986C20360B0300F03845 /* GBLaunchAtLogin.m */; };
 		A5999C4C1FF3BB89009905E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5999C4E1FF3BB89009905E1 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +26,11 @@
 		2C9625F520295D9F00F0C47E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3319A9E81E085353005DB79C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		3319A9E91E085353005DB79C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		336F74481E07E136009BCC1B /* HighSierraMediaKeyEnabler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighSierraMediaKeyEnabler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3333F8922198687500816A9F /* GBLaunchAtLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBLaunchAtLogin.h; sourceTree = "<group>"; };
+		3333F8932198687500816A9F /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3333F8942198687500816A9F /* GBLaunchAtLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBLaunchAtLogin.m; sourceTree = "<group>"; };
+		3333F8952198687500816A9F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		336F74481E07E136009BCC1B /* MacMediaKeyForwarder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacMediaKeyForwarder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		336F744B1E07E136009BCC1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		336F744C1E07E136009BCC1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		336F744F1E07E136009BCC1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,10 +45,6 @@
 		33CD48C11F866DC6000C454F /* iTunes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 		33CD48C71F8671B6000C454F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		33CD48C91F86724F000C454F /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		6E40986B20360B0300F03845 /* GBLaunchAtLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBLaunchAtLogin.h; sourceTree = "<group>"; };
-		6E40986C20360B0300F03845 /* GBLaunchAtLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBLaunchAtLogin.m; sourceTree = "<group>"; };
-		6E40986D20360B0300F03845 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		6E40986E20360B0300F03845 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A5999C4D1FF3BB89009905E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A5999C4F1FF3BB98009905E1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,10 +62,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3333F8912198687500816A9F /* GBLaunchAtLogin */ = {
+			isa = PBXGroup;
+			children = (
+				3333F8922198687500816A9F /* GBLaunchAtLogin.h */,
+				3333F8932198687500816A9F /* LICENSE */,
+				3333F8942198687500816A9F /* GBLaunchAtLogin.m */,
+				3333F8952198687500816A9F /* README.md */,
+			);
+			name = GBLaunchAtLogin;
+			path = MacMediaKeyForwarder/Frameworks/GBLaunchAtLogin;
+			sourceTree = "<group>";
+		};
 		336F743F1E07E136009BCC1B = {
 			isa = PBXGroup;
 			children = (
-				336F744A1E07E136009BCC1B /* HighSierraMediaKeyEnabler */,
+				336F744A1E07E136009BCC1B /* MacMediaKeyForwarder */,
 				336F74491E07E136009BCC1B /* Products */,
 				336F74631E07E4F6009BCC1B /* Frameworks */,
 			);
@@ -72,12 +86,12 @@
 		336F74491E07E136009BCC1B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				336F74481E07E136009BCC1B /* HighSierraMediaKeyEnabler.app */,
+				336F74481E07E136009BCC1B /* MacMediaKeyForwarder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		336F744A1E07E136009BCC1B /* HighSierraMediaKeyEnabler */ = {
+		336F744A1E07E136009BCC1B /* MacMediaKeyForwarder */ = {
 			isa = PBXGroup;
 			children = (
 				33CD48C11F866DC6000C454F /* iTunes.h */,
@@ -86,7 +100,7 @@
 				336F744C1E07E136009BCC1B /* AppDelegate.m */,
 				336F744E1E07E136009BCC1B /* Supporting Files */,
 			);
-			path = HighSierraMediaKeyEnabler;
+			path = MacMediaKeyForwarder;
 			sourceTree = "<group>";
 		};
 		336F744E1E07E136009BCC1B /* Supporting Files */ = {
@@ -110,31 +124,19 @@
 		336F74631E07E4F6009BCC1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E40986A20360B0300F03845 /* GBLaunchAtLogin */,
+				3333F8912198687500816A9F /* GBLaunchAtLogin */,
 				33CD48BE1F866DB7000C454F /* ScriptingBridge.framework */,
 				336F74641E07E4F6009BCC1B /* CoreAudio.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6E40986A20360B0300F03845 /* GBLaunchAtLogin */ = {
-			isa = PBXGroup;
-			children = (
-				6E40986B20360B0300F03845 /* GBLaunchAtLogin.h */,
-				6E40986C20360B0300F03845 /* GBLaunchAtLogin.m */,
-				6E40986D20360B0300F03845 /* LICENSE */,
-				6E40986E20360B0300F03845 /* README.md */,
-			);
-			name = GBLaunchAtLogin;
-			path = HighSierraMediaKeyEnabler/Frameworks/GBLaunchAtLogin;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		336F74471E07E136009BCC1B /* HighSierraMediaKeyEnabler */ = {
+		336F74471E07E136009BCC1B /* MacMediaKeyForwarder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 336F74591E07E136009BCC1B /* Build configuration list for PBXNativeTarget "HighSierraMediaKeyEnabler" */;
+			buildConfigurationList = 336F74591E07E136009BCC1B /* Build configuration list for PBXNativeTarget "MacMediaKeyForwarder" */;
 			buildPhases = (
 				336F74441E07E136009BCC1B /* Sources */,
 				336F74451E07E136009BCC1B /* Frameworks */,
@@ -144,9 +146,9 @@
 			);
 			dependencies = (
 			);
-			name = HighSierraMediaKeyEnabler;
+			name = MacMediaKeyForwarder;
 			productName = "High Sierra Media Key Enabler";
-			productReference = 336F74481E07E136009BCC1B /* HighSierraMediaKeyEnabler.app */;
+			productReference = 336F74481E07E136009BCC1B /* MacMediaKeyForwarder.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -155,11 +157,12 @@
 		336F74401E07E136009BCC1B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Milan Toth";
 				TargetAttributes = {
 					336F74471E07E136009BCC1B = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = KAX983KY52;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -169,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 336F74431E07E136009BCC1B /* Build configuration list for PBXProject "HighSierraMediaKeyEnabler" */;
+			buildConfigurationList = 336F74431E07E136009BCC1B /* Build configuration list for PBXProject "MacMediaKeyForwarder" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -185,7 +188,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				336F74471E07E136009BCC1B /* HighSierraMediaKeyEnabler */,
+				336F74471E07E136009BCC1B /* MacMediaKeyForwarder */,
 			);
 		};
 /* End PBXProject section */
@@ -195,8 +198,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3333F8962198687500816A9F /* LICENSE in Resources */,
 				336F74521E07E136009BCC1B /* Assets.xcassets in Resources */,
 				A5999C4C1FF3BB89009905E1 /* Localizable.strings in Resources */,
+				3333F8982198687500816A9F /* README.md in Resources */,
 				33CD48CC1F867408000C454F /* icon@2x.png in Resources */,
 				336F74551E07E136009BCC1B /* MainMenu.xib in Resources */,
 				33CD48CB1F867394000C454F /* icon.png in Resources */,
@@ -210,7 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E40986F20360B0300F03845 /* GBLaunchAtLogin.m in Sources */,
+				3333F8972198687500816A9F /* GBLaunchAtLogin.m in Sources */,
 				336F74501E07E136009BCC1B /* main.m in Sources */,
 				336F744D1E07E136009BCC1B /* AppDelegate.m in Sources */,
 			);
@@ -255,6 +260,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -262,6 +268,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -309,6 +316,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -316,6 +324,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -347,11 +356,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = HighSierraMediaKeyEnabler/Info.plist;
+				DEVELOPMENT_TEAM = KAX983KY52;
+				INFOPLIST_FILE = MacMediaKeyForwarder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.milgra.hsmke;
@@ -365,11 +374,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = HighSierraMediaKeyEnabler/Info.plist;
+				DEVELOPMENT_TEAM = KAX983KY52;
+				INFOPLIST_FILE = MacMediaKeyForwarder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.milgra.hsmke;
@@ -381,7 +390,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		336F74431E07E136009BCC1B /* Build configuration list for PBXProject "HighSierraMediaKeyEnabler" */ = {
+		336F74431E07E136009BCC1B /* Build configuration list for PBXProject "MacMediaKeyForwarder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				336F74571E07E136009BCC1B /* Debug */,
@@ -390,7 +399,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		336F74591E07E136009BCC1B /* Build configuration list for PBXNativeTarget "HighSierraMediaKeyEnabler" */ = {
+		336F74591E07E136009BCC1B /* Build configuration list for PBXNativeTarget "MacMediaKeyForwarder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				336F745A1E07E136009BCC1B /* Debug */,

@@ -26,7 +26,7 @@ The app listens on the event tap for key events. This causes problems in some ra
 - when changing search engine in Safari's preferences window
 - when trying to allow third-party kernel extensions
 
-In these cases simply pause Mac Media Key Enabler from it's menu.
+In these cases simply pause Mac Media Key Forwarder from it's menu.
 
 ---
 

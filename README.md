@@ -38,6 +38,7 @@ Contributors :
 * Sungho Lee ([@sh1217sh](http://github.com/sh1217sh))
 * Björn Büschke ([@maciboy](http://github.com/maciboy))
 * Sergei Solovev ([@e1ectron](http://github.com/e1ectron))
+*Munkácsi Márk ([@munkacsimark](http://github.com/munkacsimark))
 
 Thank you!!!
 

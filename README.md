@@ -25,6 +25,7 @@ Apple increased MacOS security with the latest version. Besides allowing MMKF to
 The app listens on the event tap for key events. This causes problems in some rare cases, like 
 - when changing search engine in Safari's preferences window
 - when trying to allow third-party kernel extensions
+
 In these cases simply pause Mac Media Key Enabler from it's menu.
 
 ---

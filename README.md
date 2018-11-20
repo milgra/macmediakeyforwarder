@@ -28,6 +28,16 @@ The app listens on the event tap for key events. This causes problems in some ra
 
 In these cases simply pause Mac Media Key Forwarder from it's menu.
 
+**MacOS Mojave Compatibility**
+
+The app itself is compatible with Mojave, but you need to add it as trusted application in order to make it functions properly.
+
+You can do this with these steps:
+1. Go to **System Preferences** > **Security & Privacy**
+2. Open the **Privacy** tab, and look for **Accessibility** in the left list
+3. Turn on the checkbox for **MacMediaKeyForwarder.app** in the right list
+4. Run the app again
+
 ---
 
 Contributors : 

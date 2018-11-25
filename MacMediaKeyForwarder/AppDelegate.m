@@ -115,7 +115,18 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
                 return event;
             }
         }
-        
+
+        // Check if permission is granted to send AppleEvents to the running app target, and prompt if not set
+        if (@available(macOS 10.14, *)) {
+            NSString *runningIdentifier = [spotify isRunning] ? @"com.spotify.client" : @"com.apple.iTunes";
+            NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:runningIdentifier];
+            OSStatus status = AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
+
+            if (status != noErr) {
+                return event;
+            }
+        }
+
         int keyFlags = ([nsEvent data1] & 0x0000FFFF);
         BOOL keyIsPressed = (((keyFlags & 0xFF00) >> 8)) == 0xA;
         

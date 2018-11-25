@@ -338,8 +338,12 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 
     if (eventPort == nil) {
         CFOptionFlags response;
-        NSURL *iconURL = [[NSBundle mainBundle] URLForResource:@"appicon" withExtension:@"png"];
-        CFUserNotificationDisplayAlert(0, kCFUserNotificationPlainAlertLevel, (__bridge CFURLRef)iconURL, nil, nil, CFSTR("Enable accessibility"), CFSTR("Please enable MacMediaKeyForwarder in System Preferences > Security & Privacy > Accessibility."), CFSTR("OK"), CFSTR("Cancel"), nil, &response);
+        CFURLRef iconURL = (__bridge CFURLRef) [[NSBundle mainBundle] URLForResource:@"appicon" withExtension:@"png"];
+        CFStringRef title = (__bridge CFStringRef) NSLocalizedString(@"Enable accessibility", @"Enable accessibility");
+        CFStringRef body = (__bridge CFStringRef) NSLocalizedString(@"Please enable MacMediaKeyForwarder in System Preferences > Security & Privacy > Accessibility.", @"Please enable MacMediaKeyForwarder in System Preferences > Security & Privacy > Accessibility.");
+        CFStringRef okText = (__bridge CFStringRef) NSLocalizedString(@"OK", @"OK");
+        CFStringRef cancelText = (__bridge CFStringRef) NSLocalizedString(@"Cancel", @"Cancel");
+        CFUserNotificationDisplayAlert(0, kCFUserNotificationPlainAlertLevel, iconURL, nil, nil, title, body, okText, cancelText, nil, &response);
 
         if (response == kCFUserNotificationDefaultResponse) {
             NSURL *URL = [NSURL URLWithString:@"x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"];

@@ -335,6 +335,20 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     
     eventPort = CGEventTapCreate( kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault, CGEventMaskBit(NX_SYSDEFINED), tapEventCallback, (__bridge void * _Nullable)(self));
     eventPort = CGEventTapCreate( kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault, NX_SYSDEFINEDMASK, tapEventCallback, (__bridge void * _Nullable)(self));
+
+    if (eventPort == nil) {
+        CFOptionFlags response;
+        NSURL *iconURL = [[NSBundle mainBundle] URLForResource:@"appicon" withExtension:@"png"];
+        CFUserNotificationDisplayAlert(0, kCFUserNotificationPlainAlertLevel, (CFURLRef)iconURL, nil, nil, CFSTR("Enable accessibility"), CFSTR("Please enable MacMediaKeyForwarder in System Preferences > Security & Privacy > Accessibility."), CFSTR("OK"), CFSTR("Cancel"), nil, &response);
+
+        if (response == kCFUserNotificationDefaultResponse) {
+            NSURL *URL = [NSURL URLWithString:@"x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"];
+            [[NSWorkspace sharedWorkspace] openURL:(URL)];
+        }
+
+        [self terminate];
+    }
+
     eventPortSource = CFMachPortCreateRunLoopSource( kCFAllocatorSystemDefault, eventPort, 0 );
     
     [self startEventSession];

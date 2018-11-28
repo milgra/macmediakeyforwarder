@@ -36,7 +36,9 @@ You can do this with these steps:
 3. Turn on the checkbox for **iTunes.app** and **Spotifiy.app** under **MacMediaKeyForwarder.app** in the right list
 4. Run the app again
 
-[img ]
+![Security Setting](security_a.png)
+
+![Security Setting](security_b.png)
 
 ---
 
@@ -52,10 +54,6 @@ Contributors :
 * Irvin Lim ([@irvinlim](https://github.com/irvinlim))
 
 Thank you!!!
-
-![Security Setting](https://github.com/milgra/macmediakeyforwarder/security_a.png)
-
-![Security Setting](https://github.com/milgra/macmediakeyforwarder/security_b.png)
 
 ---
 

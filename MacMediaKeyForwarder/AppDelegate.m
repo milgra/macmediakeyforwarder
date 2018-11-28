@@ -116,17 +116,6 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
             }
         }
 
-        // Check if permission is granted to send AppleEvents to the running app target, and prompt if not set
-        if (@available(macOS 10.14, *)) {
-            NSString *runningIdentifier = [spotify isRunning] ? @"com.spotify.client" : @"com.apple.iTunes";
-            NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:runningIdentifier];
-            OSStatus status = AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
-
-            if (status != noErr) {
-                return event;
-            }
-        }
-
         int keyFlags = ([nsEvent data1] & 0x0000FFFF);
         BOOL keyIsPressed = (((keyFlags & 0xFF00) >> 8)) == 0xA;
         
@@ -347,23 +336,26 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     eventPort = CGEventTapCreate( kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault, CGEventMaskBit(NX_SYSDEFINED), tapEventCallback, (__bridge void * _Nullable)(self));
     eventPort = CGEventTapCreate( kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault, NX_SYSDEFINEDMASK, tapEventCallback, (__bridge void * _Nullable)(self));
 
-    if (eventPort == nil) {
-        CFOptionFlags response;
-        CFURLRef iconURL = (__bridge CFURLRef) [[NSBundle mainBundle] URLForResource:@"appicon" withExtension:@"png"];
-        CFStringRef title = (__bridge CFStringRef) NSLocalizedString(@"Enable accessibility", @"Enable accessibility");
-        CFStringRef body = (__bridge CFStringRef) NSLocalizedString(@"Please enable MacMediaKeyForwarder in System Preferences > Security & Privacy > Accessibility.", @"Please enable MacMediaKeyForwarder in System Preferences > Security & Privacy > Accessibility.");
-        CFStringRef okText = (__bridge CFStringRef) NSLocalizedString(@"OK", @"OK");
-        CFStringRef cancelText = (__bridge CFStringRef) NSLocalizedString(@"Cancel", @"Cancel");
-        CFUserNotificationDisplayAlert(0, kCFUserNotificationPlainAlertLevel, iconURL, nil, nil, title, body, okText, cancelText, nil, &response);
+    // Check if permission is granted to send AppleEvents to the running app target, and prompt if not set
+    if ( @available(macOS 10.14, *) )
+    {
 
-        if (response == kCFUserNotificationDefaultResponse) {
-            NSURL *URL = [NSURL URLWithString:@"x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"];
-            [[NSWorkspace sharedWorkspace] openURL:(URL)];
+        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+        SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+        
+        if ( spotify != nil )
+        {
+            NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.spotify.client"];
+            AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
         }
-
-        [self terminate];
+        
+        if ( iTunes != nil )
+        {
+            NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.apple.iTunes"];
+            AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
+        }
     }
-
+    
     eventPortSource = CFMachPortCreateRunLoopSource( kCFAllocatorSystemDefault, eventPort, 0 );
     
     [self startEventSession];

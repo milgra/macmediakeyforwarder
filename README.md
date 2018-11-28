@@ -16,10 +16,6 @@ Download the compiled application from my [homepage](http://milgra.com/high-sier
 
 If you want even more control over what you want to control you should try [beardedspice](http://beardedspice.github.io).
 
-**Installation**
-
-Apple increased MacOS security with the latest version. Besides allowing MMKF to install in various popups you also have to add it as a trusted app in System Preferences -> Security & Privacy -> Privacy tab -> Accessibility menuitem on the left. You have to click on the lock at the lower left corner then click on the plus icon under app list table and select Mac Media Key Forwarder from Applications folder.  
-
 **Issues you should know about**
 
 The app listens on the event tap for key events. This causes problems in some rare cases, like 
@@ -36,7 +32,11 @@ You can do this with these steps:
 1. Go to **System Preferences** > **Security & Privacy**
 2. Open the **Privacy** tab, and look for **Accessibility** in the left list
 3. Turn on the checkbox for **MacMediaKeyForwarder.app** in the right list
+2. Look for **Automation** in the left list
+3. Turn on the checkbox for **iTunes.app** and **Spotifiy.app** under **MacMediaKeyForwarder.app** in the right list
 4. Run the app again
+
+[img ]
 
 ---
 
@@ -49,10 +49,18 @@ Contributors :
 * Björn Büschke ([@maciboy](http://github.com/maciboy))
 * Sergei Solovev ([@e1ectron](http://github.com/e1ectron))
 * Munkácsi Márk ([@munkacsimark](http://github.com/munkacsimark))
+* Irvin Lim ([@irvinlim](https://github.com/irvinlim))
 
 Thank you!!!
 
+![Security Setting](https://github.com/milgra/macmediakeyforwarder/security_a.png)
+
+![Security Setting](https://github.com/milgra/macmediakeyforwarder/security_b.png)
+
 ---
+
+What's new in version 2.1 :
+- app brings up permission popups if permission is not granted for Accessibility and Automation Target
 
 What's new in version 2.0 :
 - app renamed to Mac Media Key Forwarder

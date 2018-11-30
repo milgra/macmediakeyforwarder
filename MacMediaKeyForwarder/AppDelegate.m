@@ -2,6 +2,7 @@
 #import "GBLaunchAtLogin.h"
 #import "iTunes.h"
 #import "Spotify.h"
+#import <CoreServices/CoreServices.h>
 #import <ScriptingBridge/ScriptingBridge.h>
 
 typedef NS_ENUM(NSInteger, MediaKeysPrioritize)

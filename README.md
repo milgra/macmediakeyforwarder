@@ -26,7 +26,7 @@ In these cases simply pause Mac Media Key Forwarder from it's menu.
 
 **Installation & MacOS Mojave Compatibility**
 
-The app itself is compatible with Mojave, but you need to add it as trusted application in order to make it functions properly.
+The app itself is compatible with Mojave, but you need to add it as trusted application in order to make it function properly.
 
 You can do this with these steps:
 1. Go to **System Preferences** > **Security & Privacy**

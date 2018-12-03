@@ -42,9 +42,11 @@ You can do this with these steps:
 
 **Other milgra utilities you might be interested in**
 
-[mac audio keepalive](https://github.com/milgra/macaudiokeepalive).
-[airpods sound quality fixer](http://milgra.com/airpods-sound-quality-fixer.html).
-[fat fingers keyboard for iphone](http://milgra.com/fat-fingers-keyboard.html).
+[mac audio keepalive](https://github.com/milgra/macaudiokeepalive)
+
+[airpods sound quality fixer](http://milgra.com/airpods-sound-quality-fixer.html)
+
+[fat fingers keyboard for iphone](http://milgra.com/fat-fingers-keyboard.html)
 
 ---
 

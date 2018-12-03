@@ -50,7 +50,7 @@ You can do this with these steps:
 
 ---
 
-Contributors : 
+**Contributors :** 
 * Michael Dorner ([@michaeldorner](http://github.com/michaeldorner))
 * Matt Chaput ([@mchaput](http://github.com/mchaput))
 * Ben Kropf ([@ben-kropf](http://github.com/ben-kropf))
@@ -65,7 +65,7 @@ Thank you!!!
 
 ---
 
-What's new in version 2.1 :
+**What's new in version 2.1 :**
 - app brings up permission popups if permission is not granted for Accessibility and Automation Target
 
 What's new in version 2.0 :

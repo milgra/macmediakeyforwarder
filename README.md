@@ -44,9 +44,9 @@ You can do this with these steps:
 
 [mac audio keepalive](https://github.com/milgra/macaudiokeepalive)
 
-[airpods sound quality fixer](http://milgra.com/airpods-sound-quality-fixer.html)
+[airpods sound quality fixer](https://github.com/milgra/airpodssoundqualityfixer)
 
-[fat fingers keyboard for iphone](http://milgra.com/fat-fingers-keyboard.html)
+[fat fingers keyboard for iphone](https://github.com/milgra/fatfingerskeyboard)
 
 ---
 

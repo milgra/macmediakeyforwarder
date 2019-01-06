@@ -65,7 +65,10 @@ Thank you!!!
 
 ---
 
-**What's new in version 2.1 :**
+**What's new in version 2.2 :**
+- MacOS Mojave 10.14.2 fix, showing notification pop-up if tap cannot be created
+
+*What's new in version 2.1 :*
 - app brings up permission popups if permission is not granted for Accessibility and Automation Target
 
 What's new in version 2.0 :

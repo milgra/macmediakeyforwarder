@@ -335,31 +335,52 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     [self updateOptionState];
     
     eventPort = CGEventTapCreate( kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault, CGEventMaskBit(NX_SYSDEFINED), tapEventCallback, (__bridge void * _Nullable)(self));
-    eventPort = CGEventTapCreate( kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault, NX_SYSDEFINEDMASK, tapEventCallback, (__bridge void * _Nullable)(self));
+    if ( eventPort == NULL )
+    {
+    	eventPort = CGEventTapCreate( kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault, NX_SYSDEFINEDMASK, tapEventCallback, (__bridge void * _Nullable)(self));
+	}
 
-    // Check if permission is granted to send AppleEvents to the running app target, and prompt if not set
-    if ( @available(macOS 10.14, *) )
+    if ( eventPort != NULL )
     {
 
-        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-        SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
-        
-        if ( spotify != nil )
-        {
-            NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.spotify.client"];
-            AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
-        }
-        
-        if ( iTunes != nil )
-        {
-            NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.apple.iTunes"];
-            AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
-        }
-    }
-    
-    eventPortSource = CFMachPortCreateRunLoopSource( kCFAllocatorSystemDefault, eventPort, 0 );
-    
-    [self startEventSession];
+		// Check if permission is granted to send AppleEvents to the running app target, and prompt if not set
+		if ( @available(macOS 10.14, *) )
+		{
+
+			iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+			SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+			
+			if ( spotify != nil )
+			{
+				NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.spotify.client"];
+				AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
+			}
+			
+			if ( iTunes != nil )
+			{
+				NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.apple.iTunes"];
+				AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
+			}
+		}
+		
+		eventPortSource = CFMachPortCreateRunLoopSource( kCFAllocatorSystemDefault, eventPort, 0 );
+		
+		[self startEventSession];
+		
+	}
+	else
+	{
+		
+		NSAlert *alert = [[NSAlert alloc] init];
+		[alert setMessageText:@"Error"];
+		[alert setInformativeText:@"Cannot start event listening. Please add Mac Media Key Forwarder to System Preferences/Security and Privacy/Privacy/ Accessibility and Automation submenus"];
+		[alert addButtonWithTitle:@"Ok"];
+		[alert runModal];
+
+		exit(0);
+
+	}
+
 }
 
 - ( void ) startEventSession

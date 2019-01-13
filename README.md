@@ -66,7 +66,10 @@ Thank you!!!
 
 ---
 
-**What's new in version 2.2 :**
+**What's new in version 2.3 :**
+- Korean, Danish, Russian and Hungarian localization is linked back to the project ( they got lost somewhere :( )
+
+*What's new in version 2.2 :*
 - MacOS Mojave 10.14.2 fix, showing notification pop-up if tap cannot be created
 
 *What's new in version 2.1 :*

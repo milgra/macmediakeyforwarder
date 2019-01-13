@@ -60,6 +60,7 @@ You can do this with these steps:
 * Sergei Solovev ([@e1ectron](http://github.com/e1ectron))
 * Munkácsi Márk ([@munkacsimark](http://github.com/munkacsimark))
 * Irvin Lim ([@irvinlim](https://github.com/irvinlim))
+* SimonSeku ([@SimonSeku](https://github.com/SimonSeku))
 
 Thank you!!!
 

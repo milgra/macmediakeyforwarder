@@ -40,6 +40,9 @@
 		336F74641E07E4F6009BCC1B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		337268BF1F8BA311007284E3 /* Spotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
 		338A08AF2028840D001F1ED3 /* manualtest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = manualtest.txt; sourceTree = "<group>"; };
+		3397086D21EB6B7B009F3857 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3397086E21EB6B8F009F3857 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3397086F21EB6B9C009F3857 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		33B952841FD6E8C5003EE4CD /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		33CD48BE1F866DB7000C454F /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		33CD48C11F866DC6000C454F /* iTunes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
@@ -186,6 +189,9 @@
 				ko,
 				de,
 				es,
+				hu,
+				ru,
+				da,
 			);
 			mainGroup = 336F743F1E07E136009BCC1B;
 			productRefGroup = 336F74491E07E136009BCC1B /* Products */;
@@ -242,6 +248,9 @@
 				A5999C4F1FF3BB98009905E1 /* ko */,
 				112AF55920263497006937BF /* de */,
 				2C9625F520295D9F00F0C47E /* es */,
+				3397086D21EB6B7B009F3857 /* hu */,
+				3397086E21EB6B8F009F3857 /* ru */,
+				3397086F21EB6B9C009F3857 /* da */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

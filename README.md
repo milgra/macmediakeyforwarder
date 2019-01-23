@@ -12,7 +12,7 @@ You can prioritize which app you would like to control or you can go with the de
 
 The app runs in the menu bar.
 
-Download the compiled application from my [homepage](http://milgra.com/high-sierra-media-key-enabler.html).
+Download the compiled application from my [homepage](http://milgra.com/mac-media-key-forwarder.html).
 
 If you want even more control over what you want to control you should try [beardedspice](http://beardedspice.github.io).
 

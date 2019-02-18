@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  MacMediaKeyForwarder
+
+  Created by Sungho Lee on 2017. 12. 27..
+  Copyright © 2017년 Milan Toth. All rights reserved.
+*/
+
+"Send events to both players" = "Ohjaa molempia soittimia";
+"Open at login" = "Avaa sisäänkirjautuessa";
+"Prioritize iTunes" = "iTunes etusijalla";
+"Prioritize Spotify" = "Spotify etusijalla";
+"Pause" = "Tauko";
+"Pause if no player is running" = "Tauko soittimien ollessa kiinni";
+"Donate if you like the app" = "Lahjoita jos pidät sovelluksesta";
+"Check for updates" = "Tarkista päivitykset";
+"Quit" = "Sulje";
+"OK" = "OK";
+"Cancel" = "Peruuta";

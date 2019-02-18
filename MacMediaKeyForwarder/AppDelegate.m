@@ -373,7 +373,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 		
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setMessageText:@"Error"];
-		[alert setInformativeText:@"Cannot start event listening. Please add Mac Media Key Forwarder to System Preferences/Security and Privacy/Privacy/ Accessibility and Automation submenus"];
+		[alert setInformativeText:@"Cannot start event listening. Please add Mac Media Key Forwarder to the \"Security & Privacy\" pane in System Preferences. Check \"Accessibility\" and \"Automation\" under the \"Privacy\" tab."];
 		[alert addButtonWithTitle:@"Ok"];
 		[alert runModal];
 

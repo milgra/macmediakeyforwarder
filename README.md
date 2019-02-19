@@ -63,14 +63,14 @@ You can do this with these steps:
 * Simon Seku ([@SimonSeku](https://github.com/SimonSeku))
 * Dave Nicolson ([@dnicolson](https://github.com/dnicolson))
 * teemue ([@teemue](https://github.com/teemue))
-* Dave Nicolson ([@dnicolson](https://github.com/dnicolson))
+* takamu ([@takamu](https://github.com/takamu))
 
 Thank you!!!
 
 ---
 
 **What's new in version 2.5 :**
-- Finnish localization
+- Finnish, Japanese localization
 - Modified Accessibility Instructions
 
 *What's new in version 2.3 :*

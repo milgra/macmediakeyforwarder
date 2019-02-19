@@ -1,0 +1,11 @@
+"Send events to both players" = "両方のプレーヤーを操作";
+"Open at login" = "ログイン時に起動";
+"Prioritize iTunes" = "iTunesを優先";
+"Prioritize Spotify" = "Spotifyを優先";
+"Pause" = "一時動作停止";
+"Pause if no player is running" = "プレーヤー未起動時に動作停止";
+"Donate if you like the app" = "アプリを気に入ったら寄付";
+"Check for updates" = "アップデートをチェック";
+"Quit" = "終了";
+"OK" = "OK";
+"Cancel" = "キャンセル";

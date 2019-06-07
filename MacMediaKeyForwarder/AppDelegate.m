@@ -265,6 +265,11 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     }
 }
 
+- (void)applicationDidBecomeActive:(NSNotification *)notification
+{
+    [statusItem setVisible:YES];
+}
+
 - ( void ) applicationDidFinishLaunching : ( NSNotification*) theNotification
 {
     // init containers
@@ -329,6 +334,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     [ statusItem setToolTip : @"Mac Media Key Forwarder" ];
     [ statusItem setMenu : menu ];
     [ statusItem setImage : image ];
+    [ statusItem setBehavior : NSStatusItemBehaviorRemovalAllowed ];
     
     [self updateStartupItemState];
     [self updatePauseState];

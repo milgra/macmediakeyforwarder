@@ -1,4 +1,4 @@
-# Mac Media Key Forwarder [![Build Status](https://travis-ci.org/milgra/highsierramediakeyenabler.svg?branch=master)](https://travis-ci.org/milgra/macmediakeyforwarder#)
+# Mac Media Key Forwarder [![Build Status](https://travis-ci.org/milgra/macmediakeyforwarder.svg?branch=master)](https://travis-ci.org/milgra/macmediakeyforwarder#)
 
 ( Formerly known as High Sierra Media Key Enabler )
 

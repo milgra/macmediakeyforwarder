@@ -64,10 +64,14 @@ You can do this with these steps:
 * Dave Nicolson ([@dnicolson](https://github.com/dnicolson))
 * teemue ([@teemue](https://github.com/teemue))
 * takamu ([@takamu](https://github.com/takamu))
+* Alex ([@sashoism](https://github.com/sashoism))
 
 Thank you!!!
 
 ---
+
+**What's new in version 2.6 :**
+- Enabled undocking status bar item 
 
 **What's new in version 2.5 :**
 - Finnish, Japanese localization

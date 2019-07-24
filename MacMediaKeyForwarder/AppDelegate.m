@@ -267,7 +267,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification
 {
-    [statusItem setVisible:YES];
+
 }
 
 - ( void ) applicationDidFinishLaunching : ( NSNotification*) theNotification
@@ -335,6 +335,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     [ statusItem setMenu : menu ];
     [ statusItem setImage : image ];
     [ statusItem setBehavior : NSStatusItemBehaviorRemovalAllowed ];
+	[ statusItem setVisible : YES ];
     
     [self updateStartupItemState];
     [self updatePauseState];

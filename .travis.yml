@@ -3,7 +3,7 @@ branches:
   - master
 
 language: objective-c
-osx_image: xcode9.1
+osx_image: xcode11
 
 script:
 - xcodebuild -project MacMediaKeyForwarder.xcodeproj -scheme "MacMediaKeyForwarder" build

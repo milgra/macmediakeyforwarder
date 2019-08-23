@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  MacMediaKeyForwarder
+
+  Created by Sebastiaan Pasma on 2019. 08. 16..
+  Copyright © 2017년 Milan Toth. All rights reserved.
+*/
+
+"Send events to both players" = "Stuur events naar beide spelers";
+"Open at login" = "Openen bij inloggen";
+"Prioritize iTunes" = "Prioriteer iTunes";
+"Prioritize Spotify" = "Prioriteer Spotify";
+"Pause" = "Pauze";
+"Pause if no player is running" = "Pauzeren als er geen speler geopend is";
+"Donate if you like the app" = "Doneren";
+"Check for updates" = "Controleer op updates";
+"Quit" = "Afsluiten";
+"OK" = "OK";
+"Cancel" = "Annuleren";

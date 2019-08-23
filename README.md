@@ -65,15 +65,19 @@ You can do this with these steps:
 * teemue ([@teemue](https://github.com/teemue))
 * takamu ([@takamu](https://github.com/takamu))
 * Alex ([@sashoism](https://github.com/sashoism))
+* Sebastiaan Pasma ([@spasma](https://github.com/spasma))
 
 Thank you!!!
 
 ---
 
-**What's new in version 2.6 :**
+**What's new in version 2.7 :**
+- Dutch localization 
+
+*What's new in version 2.6 :*
 - Enabled undocking status bar item 
 
-**What's new in version 2.5 :**
+*What's new in version 2.5 :*
 - Finnish, Japanese localization
 - Modified Accessibility Instructions
 

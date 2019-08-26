@@ -66,12 +66,17 @@ You can do this with these steps:
 * takamu ([@takamu](https://github.com/takamu))
 * Alex ([@sashoism](https://github.com/sashoism))
 * Sebastiaan Pasma ([@spasma](https://github.com/spasma))
+* WiktorBuczko ([@WiktorBuczko](https://github.com/WiktorBuczko))
 
 Thank you!!!
 
 ---
 
-**What's new in version 2.7 :**
+*What's new in version 2.8 :*
+- Polish localization
+- Fixed broken Japanese, Finnish, Dutch localization 
+
+*What's new in version 2.7 :*
 - Dutch localization 
 
 *What's new in version 2.6 :*

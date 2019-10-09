@@ -101,7 +101,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
             return event;
         }
         
-        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.Music"];
         SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
         
         if ( pauseState == PauseStatePause )

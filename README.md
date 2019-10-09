@@ -67,10 +67,15 @@ You can do this with these steps:
 * Alex ([@sashoism](https://github.com/sashoism))
 * Sebastiaan Pasma ([@spasma](https://github.com/spasma))
 * WiktorBuczko ([@WiktorBuczko](https://github.com/WiktorBuczko))
+* Andy White ([@arcwhite](https://github.com/arcwhite))
+* xjbeta ([@xjbeta](https://github.com/xjbeta))
 
 Thank you!!!
 
 ---
+
+*What's new in version 3.0 :*
+- Catalina compatibility
 
 *What's new in version 2.8 :*
 - Polish localization

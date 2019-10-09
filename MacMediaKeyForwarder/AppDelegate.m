@@ -101,7 +101,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
             return event;
         }
         
-        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.Music"];
+        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:[self iTunesBundleIdentifier]];
         SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
         
         if ( pauseState == PauseStatePause )
@@ -265,6 +265,17 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     }
 }
 
+- (NSString *)iTunesBundleIdentifier {
+    if ( @available(macOS 10.15, *) )
+    {
+        return @"com.apple.music";
+    }
+    else
+    {
+        return @"com.apple.iTunes";
+    }
+}
+
 - (void)applicationDidBecomeActive:(NSNotification *)notification
 {
 
@@ -354,7 +365,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 		if ( @available(macOS 10.14, *) )
 		{
 
-			iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+			iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:[self iTunesBundleIdentifier]];
 			SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
 			
 			if ( spotify != nil )
@@ -365,7 +376,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 			
 			if ( iTunes != nil )
 			{
-				NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.apple.iTunes"];
+				NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:[self iTunesBundleIdentifier]];
 				AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
 			}
 		}

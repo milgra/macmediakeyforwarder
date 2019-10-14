@@ -69,10 +69,15 @@ You can do this with these steps:
 * WiktorBuczko ([@WiktorBuczko](https://github.com/WiktorBuczko))
 * Andy White ([@arcwhite](https://github.com/arcwhite))
 * xjbeta ([@xjbeta](https://github.com/xjbeta))
+* Jules Coynel ([@jcoynel](https://github.com/jcoynel))
 
 Thank you!!!
 
 ---
+
+*What's new in version 3.1 :*
+- Ability to hide the menu icon
+- French translation
 
 *What's new in version 3.0 :*
 - Catalina compatibility

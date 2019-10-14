@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, KeyHoldState)
 
 static NSString *kUserDefaultsPriorityOptionKey = @"user_priority_option";
 static NSString *kUserDefaultsPauseOptionKey = @"user_pause_option";
+static NSString *kUserDefaultsHideFromMenuBarOptionKey = @"user_hide_from_menu_bar_option";
 
 PauseState pauseState;
 KeyHoldState keyHoldStatus;
@@ -47,6 +48,7 @@ MediaKeysPrioritize mediaKeysPriority;
     NSMutableArray *priorityOptionItems;
     NSMutableArray *pauseOptionItems;
     NSMenuItem *startupItem;
+    NSMenuItem *hideFromMenuBarItem;
 }
 
 @end
@@ -330,6 +332,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
 
     startupItem = [ menu addItemWithTitle:NSLocalizedString(@"Open at login", @"Open at login") action:@selector(toggleStartupItem) keyEquivalent:@""];
+    hideFromMenuBarItem = [ menu addItemWithTitle:NSLocalizedString(@"Hide from menu bar", @"Hide from menu bar") action:@selector(hideFromMenuBar) keyEquivalent:@""];
     [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
 
     [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
@@ -346,7 +349,11 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     [ statusItem setMenu : menu ];
     [ statusItem setImage : image ];
     [ statusItem setBehavior : NSStatusItemBehaviorRemovalAllowed ];
-	[ statusItem setVisible : YES ];
+    if ([self shouldHideFromMenuBar]) {
+        [ statusItem setVisible : NO ];
+    } else {
+        [ statusItem setVisible : YES ];
+    }
     
     [self updateStartupItemState];
     [self updatePauseState];
@@ -399,6 +406,16 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 
 	}
 
+}
+
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag
+{
+    if ([self shouldHideFromMenuBar]) {
+        [self setHideFromMenuBar:NO];
+        [statusItem setVisible: YES];
+    }
+    
+    return YES;
 }
 
 - ( void ) startEventSession
@@ -499,6 +516,27 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     }
     
     [self updateStartupItemState];
+}
+
+- (void)hideFromMenuBar
+{
+    [self setHideFromMenuBar:YES];
+    
+    if ([GBLaunchAtLogin isLoginItem] == NO) {
+        [GBLaunchAtLogin addAppAsLoginItem];
+    }
+    
+    [statusItem setVisible: NO];
+}
+
+- (void)setHideFromMenuBar:(BOOL)hidden
+{
+    [[NSUserDefaults standardUserDefaults] setBool:hidden forKey:kUserDefaultsHideFromMenuBarOptionKey];
+}
+
+- (BOOL)shouldHideFromMenuBar
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultsHideFromMenuBarOptionKey];
 }
 
 #pragma mark - UI refresh

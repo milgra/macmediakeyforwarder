@@ -8,11 +8,12 @@
 
 "Send events to both players" = "Ohjaa molempia soittimia";
 "Open at login" = "Avaa sisäänkirjautuessa";
+"Hide from menu bar" = "Piilota valikkoriviltä";
 "Prioritize iTunes" = "iTunes etusijalla";
 "Prioritize Spotify" = "Spotify etusijalla";
 "Pause" = "Tauko";
 "Pause if no player is running" = "Tauko soittimien ollessa kiinni";
-"Donate if you like the app" = "Lahjoita jos pidät sovelluksesta";
+"Donate if you like the app" = "Lahjoita, jos pidät sovelluksesta";
 "Check for updates" = "Tarkista päivitykset";
 "Quit" = "Sulje";
 "OK" = "OK";

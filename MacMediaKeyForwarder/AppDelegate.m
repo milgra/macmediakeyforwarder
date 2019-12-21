@@ -4,6 +4,31 @@
 #import "Spotify.h"
 #import <CoreServices/CoreServices.h>
 #import <ScriptingBridge/ScriptingBridge.h>
+#import <MediaPlayer/MediaPlayer.h>
+
+enum {
+    kMRPlaybackStateUnknown = 0,
+    kMRPlaybackStatePlaying,
+    kMRPlaybackStatePaused,
+    kMRPlaybackStateStopped,
+    kMRPlaybackStateInterrupted
+};
+typedef uint32_t MRPlaybackState;
+
+typedef void (^MRMediaRemoteGetNowPlayingClientBlock)(id);
+typedef void (^MRMediaRemoteGetNowPlayingApplicationIsPlayingBlock)(BOOL);
+typedef struct _MROrigin *MROriginRef;
+typedef uint32_t MRMediaRemoteError;
+
+void MRMediaRemoteGetNowPlayingClient(dispatch_queue_t, MRMediaRemoteGetNowPlayingClientBlock);
+void MRMediaRemoteSetNowPlayingApplicationOverrideEnabled(BOOL);
+void MRMediaRemoteRegisterForNowPlayingNotifications(dispatch_queue_t);
+BOOL MRMediaRemoteSetCanBeNowPlayingApplication(BOOL);
+MROriginRef MRMediaRemoteGetLocalOrigin(void);
+void MRMediaRemoteSetNowPlayingApplicationPlaybackStateForOrigin(MROriginRef, MRPlaybackState, dispatch_queue_t, void(^completion)(MRMediaRemoteError));
+NSString *MRNowPlayingClientGetBundleIdentifier(id);
+
+extern NSString *kMRMediaRemoteNowPlayingApplicationIsPlayingDidChangeNotification;
 
 typedef NS_ENUM(NSInteger, MediaKeysPrioritize)
 {
@@ -124,6 +149,8 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
         
         if (keyIsPressed)
         {
+           MRMediaRemoteSetNowPlayingApplicationOverrideEnabled(NO);
+
             switch ( mediaKeysPriority )
             {
                 case MediaKeysPrioritizeITunes:
@@ -406,6 +433,41 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 
 	}
 
+    [[NSNotificationCenter defaultCenter]
+        addObserver:self
+        selector:@selector(handleExternalMediaPlayer:)
+        name:kMRMediaRemoteNowPlayingApplicationIsPlayingDidChangeNotification
+        object:nil];
+    MRMediaRemoteRegisterForNowPlayingNotifications(dispatch_get_main_queue());
+    MRMediaRemoteSetCanBeNowPlayingApplication(YES);
+}
+
+- (void)handleExternalMediaPlayer:(NSNotification *)notification {
+    NSArray *supportedBundleIdentifiers = @[@"com.apple.Music", @"com.apple.iTunes"];
+    MRMediaRemoteGetNowPlayingClient(dispatch_get_main_queue(),
+        ^(id clientObj) {
+            if (nil != clientObj) {
+                NSString *appBundleIdentifier = MRNowPlayingClientGetBundleIdentifier(clientObj);
+                NSLog(@"New MediaPlayer bundleIdentifier: %@", appBundleIdentifier);
+                if (![supportedBundleIdentifiers containsObject:appBundleIdentifier]) {
+                    MRMediaRemoteSetNowPlayingApplicationOverrideEnabled(YES);
+                }
+            }
+    });
+
+    NSArray *supportedApps = @[@"Music", @"iTunes"];
+    if (![supportedApps containsObject:notification.userInfo[@"kMRMediaRemoteNowPlayingApplicationDisplayNameUserInfoKey"]]) {
+        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:[self iTunesBundleIdentifier]];
+        if ([iTunes isRunning]) {
+            if ([iTunes playerState] == 1800426320) {
+                NSLog(@"Set Touch Bar state to playing");
+                MRMediaRemoteSetNowPlayingApplicationPlaybackStateForOrigin(MRMediaRemoteGetLocalOrigin(), kMRPlaybackStatePlaying, dispatch_get_main_queue(), ^(MRMediaRemoteError error) {});
+            } else {
+                NSLog(@"Set Touch Bar state to stopped");
+                MRMediaRemoteSetNowPlayingApplicationPlaybackStateForOrigin(MRMediaRemoteGetLocalOrigin(), kMRPlaybackStateStopped, dispatch_get_main_queue(), ^(MRMediaRemoteError error) {});
+            }
+        }
+    }
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag

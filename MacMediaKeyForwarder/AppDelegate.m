@@ -444,7 +444,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 }
 
 - (void)checkMediaPlayers {
-    NSArray *supportedBundleIdentifiers = @[@"com.apple.Music", @"com.apple.iTunes"];
+    NSArray *supportedBundleIdentifiers = @[[self iTunesBundleIdentifier], @"com.spotify.client"];
     MRMediaRemoteGetNowPlayingClient(dispatch_get_main_queue(),
         ^(id clientObj) {
             if (nil != clientObj) {
@@ -460,17 +460,16 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 - (void)handleExternalMediaPlayer:(NSNotification *)notification {
     [self checkMediaPlayers];
 
-    NSArray *supportedApps = @[@"Music", @"iTunes"];
+    NSArray *supportedApps = @[@"Music", @"iTunes", @"Spotify"];
     if (![supportedApps containsObject:notification.userInfo[@"kMRMediaRemoteNowPlayingApplicationDisplayNameUserInfoKey"]]) {
         iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:[self iTunesBundleIdentifier]];
-        if ([iTunes isRunning]) {
-            if ([iTunes playerState] == 1800426320) {
-                NSLog(@"Set Touch Bar state to playing");
-                MRMediaRemoteSetNowPlayingApplicationPlaybackStateForOrigin(MRMediaRemoteGetLocalOrigin(), kMRPlaybackStatePlaying, dispatch_get_main_queue(), ^(MRMediaRemoteError error) {});
-            } else {
-                NSLog(@"Set Touch Bar state to stopped");
-                MRMediaRemoteSetNowPlayingApplicationPlaybackStateForOrigin(MRMediaRemoteGetLocalOrigin(), kMRPlaybackStateStopped, dispatch_get_main_queue(), ^(MRMediaRemoteError error) {});
-            }
+        SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+        if (([iTunes isRunning] && [iTunes playerState] == 1800426320) || ([spotify isRunning] && [spotify playerState] == SpotifyEPlSPlaying)) {
+            NSLog(@"Set Touch Bar state to playing");
+            MRMediaRemoteSetNowPlayingApplicationPlaybackStateForOrigin(MRMediaRemoteGetLocalOrigin(), kMRPlaybackStatePlaying, dispatch_get_main_queue(), ^(MRMediaRemoteError error) {});
+        } else {
+            NSLog(@"Set Touch Bar state to stopped");
+            MRMediaRemoteSetNowPlayingApplicationPlaybackStateForOrigin(MRMediaRemoteGetLocalOrigin(), kMRPlaybackStateStopped, dispatch_get_main_queue(), ^(MRMediaRemoteError error) {});
         }
     }
 }

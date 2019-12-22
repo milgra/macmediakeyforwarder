@@ -440,9 +440,10 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
         object:nil];
     MRMediaRemoteRegisterForNowPlayingNotifications(dispatch_get_main_queue());
     MRMediaRemoteSetCanBeNowPlayingApplication(YES);
+    [self checkMediaPlayers];
 }
 
-- (void)handleExternalMediaPlayer:(NSNotification *)notification {
+- (void)checkMediaPlayers {
     NSArray *supportedBundleIdentifiers = @[@"com.apple.Music", @"com.apple.iTunes"];
     MRMediaRemoteGetNowPlayingClient(dispatch_get_main_queue(),
         ^(id clientObj) {
@@ -454,6 +455,10 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
                 }
             }
     });
+}
+
+- (void)handleExternalMediaPlayer:(NSNotification *)notification {
+    [self checkMediaPlayers];
 
     NSArray *supportedApps = @[@"Music", @"iTunes"];
     if (![supportedApps containsObject:notification.userInfo[@"kMRMediaRemoteNowPlayingApplicationDisplayNameUserInfoKey"]]) {

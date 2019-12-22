@@ -297,7 +297,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 - (NSString *)iTunesBundleIdentifier {
     if ( @available(macOS 10.15, *) )
     {
-        return @"com.apple.music";
+        return @"com.apple.Music";
     }
     else
     {

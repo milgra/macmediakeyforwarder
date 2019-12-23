@@ -464,7 +464,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     if (![supportedApps containsObject:notification.userInfo[@"kMRMediaRemoteNowPlayingApplicationDisplayNameUserInfoKey"]]) {
         iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:[self iTunesBundleIdentifier]];
         SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
-        if (([iTunes isRunning] && [iTunes playerState] == 1800426320) || ([spotify isRunning] && [spotify playerState] == SpotifyEPlSPlaying)) {
+        if (([iTunes isRunning] && [iTunes playerState] == iTunesEPlSPlaying) || ([spotify isRunning] && [spotify playerState] == SpotifyEPlSPlaying)) {
             NSLog(@"Set Touch Bar state to playing");
             MRMediaRemoteSetNowPlayingApplicationPlaybackStateForOrigin(MRMediaRemoteGetLocalOrigin(), kMRPlaybackStatePlaying, dispatch_get_main_queue(), ^(MRMediaRemoteError error) {});
         } else {

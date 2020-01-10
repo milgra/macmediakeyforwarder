@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  MacMediaKeyForwarder
+
+  Created by emnsen on 2020. 01. 10..
+  Copyright © 2017년 Milan Toth. All rights reserved.
+*/
+
+"Send events to both players" = "Her iki oynatıcıya da etkinlik gönder";
+"Open at login" = "Açılışta başlat";
+"Prioritize iTunes" = "iTunes'a öncelik ver";
+"Prioritize Spotify" = "Spotify'a öncelik ver";
+"Pause" = "Duraklat";
+"Pause if no player is running" = "Oynatıcı çalışmıyorsa duraklat";
+"Donate if you like the app" = "Uygulamayı beğendiyseniz bağış yapın";
+"Check for updates" = "Güncellemeleri kontrol et";
+"Quit" = "Çık";
+"OK" = "TAMAM";
+"Cancel" = "Vazgeç";

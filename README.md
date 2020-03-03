@@ -4,8 +4,6 @@ Mac Media Key Forwarder for [iTunes](https://www.apple.com/itunes/) and [Spotify
 
 ## I no longer maintain Mac Media Key Forwarder beacuse I moved to Linux. If you have time to maintain it feel free to fork it and write me, I will put the link here. Try [beardedspice](http://beardedspice.github.io) for replacement.
 
----
-
 Forwards media keys to iTunes or Spotify directly.
 
 You can prioritize which app you would like to control or you can go with the default behaviour which controls the running app.

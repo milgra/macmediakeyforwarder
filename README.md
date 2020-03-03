@@ -1,8 +1,8 @@
 # Mac Media Key Forwarder [![Build Status](https://travis-ci.org/milgra/macmediakeyforwarder.svg?branch=master)](https://travis-ci.org/milgra/macmediakeyforwarder#)
 
-( Formerly known as High Sierra Media Key Enabler )
-
 Mac Media Key Forwarder for [iTunes](https://www.apple.com/itunes/) and [Spotify](http://www.spotify.com).
+
+<span style="color:red">I no longer maintain Mac Media Key Forwarder beacuse I moved to Linux. If you have time to maintain it feel free to fork it and write me, I will put the link here. Try [beardedspice](http://beardedspice.github.io) for replacement.</span>
 
 ---
 
@@ -12,7 +12,7 @@ You can prioritize which app you would like to control or you can go with the de
 
 The app runs in the menu bar.
 
-Download the compiled application from my [homepage](http://milgra.com/mac-media-key-forwarder.html).
+Download the compiled application from my [Releases](https://github.com/milgra/macmediakeyforwarder/releases).
 
 If you want even more control over what you want to control you should try [beardedspice](http://beardedspice.github.io).
 

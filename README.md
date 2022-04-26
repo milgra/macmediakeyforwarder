@@ -2,7 +2,7 @@
 
 Mac Media Key Forwarder for [iTunes](https://www.apple.com/itunes/) and [Spotify](http://www.spotify.com).
 
-## For the latest version and bugfixes use quentinlesceller's fork : https://github.com/quentinlesceller/macmediakeyforwarder/releases##
+## For the latest version and bugfixes use quentinlesceller's fork : https://github.com/quentinlesceller/macmediakeyforwarder/releases
 
 Forwards media keys to iTunes or Spotify directly.
 

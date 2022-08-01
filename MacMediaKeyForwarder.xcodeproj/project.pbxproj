@@ -54,6 +54,7 @@
 		33CD48C91F86724F000C454F /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		33E2CC3D21B1361E002F8094 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		84B350D923526D6100255450 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A523261E2887DBBC001EA9B4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A5999C4D1FF3BB89009905E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A5999C4F1FF3BB98009905E1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AA3E49F521AAA0C500EEA78B /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
@@ -203,6 +204,7 @@
 				pl,
 				nl,
 				fr,
+				"zh-Hant",
 			);
 			mainGroup = 336F743F1E07E136009BCC1B;
 			productRefGroup = 336F74491E07E136009BCC1B /* Products */;
@@ -267,6 +269,7 @@
 				330630132313F6D400ACFBFE /* pl */,
 				330630142313F6DE00ACFBFE /* nl */,
 				84B350D923526D6100255450 /* fr */,
+				A523261E2887DBBC001EA9B4 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
